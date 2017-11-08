@@ -1,0 +1,250 @@
+\ProvidesPackage{labfancy}
+%%%%%%%%%%%% Comms Lab Fancy Headings %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% by Alex Stark %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% 20/9/94 %%%%%%%%%%%%%%%%%%%%%
+
+% Uses one and two-sided options
+% Uses draft option to print footer notes.
+
+%%% The package autodetects the use of chapter numbering.  In
+%%% two-sided mode the format will then be chapter/section instead of
+%%% section/subsection.  To override this, use \sectionheadtrue and
+%%% \sectionheadfalse.
+
+\newif\ifdraft \draftfalse
+\DeclareOption{draft}{\drafttrue}
+\DeclareOption{final}{\draftfalse}
+
+%%%-%%% Instead of using an option, autodetect later
+%%%-%%%\newif\ifsectionhead \sectionheadtrue
+%%%-%%%\DeclareOption{section}{\sectionheadtrue}
+%%%-%%%\DeclareOption{chapter}{\sectionheadfalse}
+
+\ProcessOptions
+
+%%%-%%% Automatic chapter detection
+\newif\ifsectionhead \sectionheadtrue
+\@ifundefined{c@chapter}{\sectionheadtrue}{\sectionheadfalse}
+
+
+%%--%% %% Dodgy!
+%%--%% \newif\if@mainmatter \@mainmattertrue
+
+
+%%%*%%% For draft time in footers
+\newcount\timehh\newcount\timemm
+\timehh=\time 
+\divide\timehh by 60 \timemm=\time
+\count255=\timehh\multiply\count255 by -60 \advance\timemm by \count255
+%%%*%%% For draft title in footers
+\def\@draftmark{Use {\tt$\backslash$draftmark}}
+\newcommand\draftmark[1]{\gdef\@draftmark{#1}}
+%%%*%%% Rule under headings
+\newdimen\headruleth
+\headruleth 0.4pt
+\def\headrule{{\hrule\@height\headruleth\@width\textwidth \vskip-\headruleth}}
+
+
+%%%*%%% (20/9/94) We don't know about books etc.
+%%%*%%% %<-book>\if@twoside
+\if@twoside
+%
+%
+%
+%
+\def\ps@labheadings{%
+%    \end{macrocode}
+%    The running feet are empty in this page style, the running head
+%    contains the page number and one of the marks.
+%    \begin{macrocode}
+%%%*%%% Changes 20/8/94
+%%%*%%%      \let\@oddfoot\@empty\let\@evenfoot\@empty
+\ifdraft
+        \def\@evenfoot{\reset@font\rmfamily\bf\hfil%
+                \raisebox{-0.5ex}[0ex][0ex]{\fbox{\strut\@draftmark}}%
+                \hfil}%
+        \def\@oddfoot{\reset@font\rmfamily\bf\hfil%
+                \raisebox{-0.5ex}[0ex][0ex]{\fbox{\strut{\it\today\ -- 
+\ifnum\timehh<10 0\fi\number\timehh\,:\,\ifnum\timemm<10 0\fi\number\timemm}}}%
+\hfil}%
+\else
+      \let\@oddfoot\@empty\let\@evenfoot\@empty
+\fi
+%
+%
+%
+%
+%
+%
+%
+%%%*%%% Changes 20/8/94
+%%%*%%%      \def\@evenhead{\thepage\hfil\slshape\leftmark}%
+%%%*%%%      \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+%%%*%%% Addition (15/9/94): -ve \vskip to counter 11pt problem
+      \def\@evenhead{\hbox to\textwidth{\vbox
+ {\hbox{\parbox[b]{\textwidth}{\bf\thepage\hfill\leftmark\strut}}
+ \headrule\vskip-3pt}}\hss}%
+      \def\@oddhead{\hbox to\textwidth{\vbox
+ {\hbox{\parbox[b]{\textwidth}{\bf\rightmark\hfill\thepage\strut}}
+ \headrule\vskip-3pt}}\hss}%
+%
+%
+%
+%
+%  Marks for twosided mode
+%
+%
+%    \end{macrocode}
+%
+%    When using this page style, the contents of the running head is
+%    determined by the chapter and section titles. So we |\let|
+%    |\@mkboth| to |\markboth|.
+%    \begin{macrocode}
+      \let\@mkboth\markboth
+%    \end{macrocode}
+%
+%    For the article document class we define |\sectionmark| to clear
+%    the right mark and put the number of the section (when it is
+%    numbered) and its title in the left mark. The rightmark is set by
+%    |\subsectionmark| to contain the subsection titles.
+%
+%    Note the use of |##1| for the parameter of the |\sectionmark|
+%    command, which will be defined when |\ps@headings| is executed.
+%
+%    \begin{macrocode}
+%<*article>
+\ifsectionhead
+      \def\sectionmark##1{%
+%%%!%%% Changed 25/8/94 took out uppercase
+%%%!%%%        \markboth {\uppercase{\ifnum \c@secnumdepth >\z@
+        \markboth {{\ifnum \c@secnumdepth >\z@
+%%%!%%% Changed 20/9/94 took out `.'
+%%%!%%%            \thesection.\hskip 1em\relax\fi
+%%%!%%% Changed 10/10/94 took out \thesection
+%%%!%%%     \thesection\hskip 1em\relax\fi
+%%%^%%% Added (10/2/95) the dot back in!
+        %    \thesection.\hskip 1em\relax
+        \fi
+            ##1}}{}}%
+      \def\subsectionmark##1{%
+        \markright {\ifnum \c@secnumdepth >\@ne
+            \thesubsection\hskip 0.8em\relax \fi
+            ##1}}
+%</article>
+%    \end{macrocode}
+%
+%    In the report and book document classes we use the |\chaptermark|
+%    and |\sectionmark| macros to fill the running heads.
+%
+%    Note the use of |##1| for the parameter of the |\chaptermark|
+%    command, which will be defined when |\ps@headings| is executed.
+%
+%    \begin{macrocode}
+%<*report|book>
+\else %sectionhead
+      \def\chaptermark##1{%
+%%%*%%% Changed 20/8/94 took out uppercase
+%%%*%%%        \markboth {\uppercase{\ifnum \c@secnumdepth >\m@ne
+        \markboth {{\ifnum \c@secnumdepth >\m@ne
+%<+book>          \if@mainmatter
+%%--%%           \if@mainmatter
+%%%*%%% Changed 20/8/94 took out `chapter 4.'
+%%%*%%%            \@chapapp\ \thechapter. \ \fi
+            \bf \fi
+%<+book>          \fi
+%%--%%           \fi
+            ##1}}{}}%
+      \def\sectionmark##1{%
+%%%*%%% Changed 20/8/94 took out uppercase
+%%%*%%%        \markright {\uppercase{\ifnum \c@secnumdepth >\z@
+        \markright {{\ifnum \c@secnumdepth >\z@
+%%%*%%% Changed 20/8/94 took out full stop and put in \bf
+%%%*%%%            \thesection. \ \fi
+%%%^%%% Added (10/2/95) the dot back in!
+            \bf \thesection. \hskip 0.8em \fi
+            ##1}}}
+%</report|book>
+\fi %sectionhead
+%    \end{macrocode}
+%
+%    The definition of |\ps@headings| for one sided printing can be
+%    much simpler, because we treat even and odd pages the same.
+%    Therefore we don't need to define |\@even...|.
+%    \begin{macrocode}
+%
+%
+%  ONE-SIDED
+%
+%
+%%%*%%% (20/9/94) Note that this (one-sided) would only be
+%%%*%%% processed for art and rep.
+%<*article|report>
+}%
+\else %@twoside
+%
+%
+%
+\def\ps@labheadings{%
+%%%*%%%
+%%%*%%% Changed 20/8/94: added draft option
+%%%*%%%      \let\@oddfoot\@empty
+\ifdraft
+        \def\@oddfoot{\reset@font\rmfamily\hfil\bf%
+                \raisebox{-0.5ex}[0ex][0ex]{\fbox{\strut\@draftmark , %
+{\it\today\ -- 
+\ifnum\timehh<10 0\fi\number\timehh\,:\,\ifnum\timemm<10 0\fi\number\timemm}}}%
+        \hfil}%
+\else
+      \let\@oddfoot\@empty
+\fi
+%%%*%%%
+%%%*%%% Changed 20/8/94: added fancier ruled headings
+%%%*%%%      \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+%%%*%%% Addition (15/9/94): -ve \vskip to counter 11pt problem
+      \def\@oddhead{\hbox to\textwidth{\vbox
+ {\hbox{\parbox[b]{\textwidth}{\bf\rightmark\hfill\thepage\strut}}
+ \headrule\vskip-3pt}}\hss}%
+      \let\@mkboth\markboth
+%    \end{macrocode}
+%    We use |\markright| now instead of |\markboth| as we did for two
+%    sided printing.
+%    \begin{macrocode}
+%<*article>
+%%*!*%% Assume section is biggest in onesided mode.
+%%*!*%% \ifsectionhead
+%
+%
+      \def\sectionmark##1{%
+%%%!%%% Changed 25/8/94 took out uppercase
+%%%!%%%        \markright {\uppercase{\ifnum \c@secnumdepth >\m@ne
+        \markright {{\ifnum \c@secnumdepth >\m@ne
+%%%$%%% 17/12/94 added `.'
+            \thesection.\hskip 0.8em\relax \fi
+            ##1}}}
+%</article>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*report|book>
+%%*!*%% Assume section is biggest in onesided mode.
+%%*!*%% \else %sectionhead
+%%*!*%%       \def\chaptermark##1{%
+%%*!*%% %%%*%%% Changed 20/8/94 took out uppercase
+%%*!*%% %%%*%%%        \markright {\uppercase{\ifnum \c@secnumdepth >\m@ne
+%%*!*%%         \markright {{\ifnum \c@secnumdepth >\m@ne
+%%*!*%% %<+book>          \if@mainmatter
+%%*!*%% %%--%%           \if@mainmatter
+%%*!*%% %%%*%%% Changed 20/8/94 took out `chapter 4'
+%%*!*%% %%%*%%%            \@chapapp\ \thechapter. \ \fi
+%%*!*%%             \bf \fi
+%%*!*%% %<+book>          \fi
+%%*!*%% %%--%%           \fi
+%%*!*%%             ##1}}}
+%%*!*%% %</report|book>
+%%*!*%% \fi %sectionhead
+}%
+\fi
+%</article|report>
+%    \end{macrocode}
+
+\pagestyle{labheadings}

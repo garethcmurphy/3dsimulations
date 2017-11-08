@@ -1,0 +1,80 @@
+    
+\newcommand\dedication[1]{\gdef\@dedication{#1}}
+\def\@dedication{\@latex@warning@no@line{No \noexpand\dedication
+    given}}
+
+\newcommand\college[1]{\gdef\@college{#1}}
+\def\@college{\@latex@warning@no@line{No \noexpand\college given}}
+
+\newlength{\barlength}
+\setlength{\barlength}{\textwidth} \addtolength{\barlength}{-1pt}
+\newlength{\VerticalOffset}
+\setlength{\VerticalOffset}{5cm}
+
+\newcommand{\titlefont}{\bfseries \fontsize{22}{26.42pt}\selectfont}
+\newcommand{\largetitlefont}{\bfseries \fontsize{29.88}{35.88pt}\selectfont}
+\newcommand{\othertitlefont}{\fontsize{14.4}{17.28}\selectfont}
+\newcommand{\authorfont}{\bfseries \fontsize{14.4}{17.28}\selectfont}
+\newcommand{\informationfont}{\fontsize{10}{12}\selectfont}
+\newcommand{\dedicationfont}{\slshape \fontsize{14.4}{17.28}\selectfont}
+
+\newcommand{\thisyear}{\number\year}
+\def\thismonth{\ifcase\month\or January\or February\or March\or
+  April\or May\or June\or July\or August\or September\or October\or November\or December\fi}
+\newcommand{\todaysdate}{\thismonth\space \thisyear}
+
+\providecommand*{\sectfont}{\relax}
+
+\renewcommand\maketitle{\begin{titlepage}
+\let\footnotesize\small
+\let\footnoterule\relax
+
+% MAIN TITLE PAGE
+\renewcommand{\baselinestretch}{1}
+\newpage \thispagestyle{empty}
+\vspace*{1.5cm}
+\begin{flushright}
+\largetitlefont \@title
+\end{flushright}
+
+\vspace*{4cm}
+\begin{flushright}
+A dissertation submitted to the University of Dublin \\
+for the degree of Doctor of Philosophy
+\end{flushright}
+
+\vspace*{\fill}
+\begin{flushright}
+{\authorfont \@author}\\[1mm]
+{\othertitlefont \@college, \todaysdate}\\[.5mm]
+
+\rule{0.9\textwidth}{0.5mm}\\[4mm]
+
+\begin{minipage}[b][15mm][t]{12.5cm}
+\raggedleft \sc
+Signal Processing and Media Applications \\
+Department of Electronic and Electrical Engineering \\
+Trinity College Dublin
+\end{minipage}
+\hspace*{1mm}
+\begin{minipage}[b][15mm][t]{1.15cm}
+	\includegraphics[height=12.25mm]{blucrst1.eps}
+\end{minipage}
+
+\end{flushright}
+
+%
+\newpage
+
+% Dedication
+\vspace*{\VerticalOffset}
+\begin{center}
+\dedicationfont \@dedication
+\end{center}
+
+\end{titlepage}
+
+\setcounter{footnote}{0}%
+\let\thanks\relax\let\maketitle\relax
+
+\gdef\@thanks{}\gdef\@author{}\gdef\@title{}}

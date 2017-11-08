@@ -1,0 +1,10 @@
+convert columnwidth.eps 	columnwidth.pdf
+convert rj1a.eps 	rj1a.pdf
+convert rj1b.eps 	rj1b.pdf
+convert rj2a.eps 	rj2a.pdf
+convert rj2b.eps 	rj2b.pdf
+convert rj3a.eps 	rj3a.pdf
+convert rj3b.eps 	rj3b.pdf
+convert rj4a.eps 	rj4a.pdf
+convert rj4b.eps 	rj4b.pdf
+convert textwidth.eps 	textwidth.pdf

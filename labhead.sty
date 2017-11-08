@@ -1,0 +1,211 @@
+% Signal Processing Lab Letter Head -- University style 
+% Paul Walmsley, modified from the original labhead.sty by Alex Stark
+% with extra modifications by Paul Troughton
+% $Header: /export/home/sandra/pjw42/cvsroot/latex/inputs/labclass/labhead.sty,v 1.5 1999/01/27 14:28:14 pjw42 Exp $
+% ************* Identification
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{labhead}[1999/1/27 Signal Processing Lab: Letter Head]
+
+% include colour shield if required
+\def\shield{bwlabcr2.eps}
+\DeclareOption{colour}{%
+\def\shield{clabcr2.eps}
+}
+
+\ProcessOptions
+
+% ************* Initial Code
+\RequirePackage[dvips]{graphicx}
+% \RequirePackage{sabon}
+\RequirePackage{ukdate} % PT
+
+% Use \thispagestyle{labhead} to get the header.
+% Customizations are performed in a similar fashion to the standard
+%   letter, except that \Lname is used instead of \name.
+% You need:
+%   \Lname {\sl A.\thinspace N.\thinspace Other}
+%   \Lemailid{xyz53}
+%   \Lsignature {Arma Dillo}
+% Look at end of this file for further customizations
+
+
+\setlength{\voffset}{-1.5cm}
+\setlength{\headsep}{3cm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\textwidth}{16cm}
+\setlength{\topmargin}{0cm}
+\addtolength{\textheight}{0.5cm}
+%\setlength{\footskip}{5.5cm}
+%\setlength{\footheight}{3.5cm}
+
+
+% Some Dimensions:
+\newlength{\headxoffset}
+\newlength{\headyoffset}
+\newlength{\headerwidth}
+\newlength{\headhmargin}
+\newlength{\headvmargin}
+\newlength{\headhoffset}
+\newlength{\headvoffset}
+
+\AtBeginDocument{%
+  %
+  \ifcase \@ptsize
+  % size for 10 pt
+  \def\headerfont{\normalsize}
+  \def\universityfont{\Large}
+  \def\fromaddressfont{\footnotesize}
+  \def\spreadamount{0.8}
+  \or % size for 11 pt
+  \def\headerfont{\small}
+  \def\universityfont{\Large}
+  \def\fromaddressfont{\footnotesize}
+  \def\spreadamount{0.8}
+  \or % size for 12 pt
+  \def\headerfont{\footnotesize}
+  \def\universityfont{\large}
+  \def\fromaddressfont{\scriptsize}
+  \def\spreadamount{0.8}
+  \fi
+  %
+  \setlength{\headxoffset}{1in}
+  \addtolength{\headxoffset}{\hoffset}
+  \addtolength{\headxoffset}{\oddsidemargin}
+  \addtolength{\headxoffset}{-\headhmargin}
+  \addtolength{\headxoffset}{-\headhoffset}
+  %
+  \setlength{\headyoffset}{1in}
+  \addtolength{\headyoffset}{\voffset}
+  \addtolength{\headyoffset}{\topmargin}
+%  \addtolength{\headyoffset}{\headheight}
+%  \addtolength{\headyoffset}{-\baselineskip}
+  \addtolength{\headyoffset}{-\headvmargin}
+  \addtolength{\headyoffset}{-\headvoffset}
+  %
+  \setlength{\headerwidth}{\paperwidth}
+  \addtolength{\headerwidth}{-2\headhmargin}
+  }
+
+% DEFINE LAB HEADER AS A PAGESTYLE
+% Lots of phoney space to make it go in the right place and look small
+
+\newcommand{\finaldefs}{%
+    \ifx\@empty\fromname \def\from@name{}
+    \else \def\from@name{From: \fromname}\fi
+    \ifx\@empty\email@id \def\e@mail{}
+    \else \def\e@mail{E-mail: {\email@id}@{\email@addr}}\fi
+    \ifx\@empty\www@id \def\www@url{}
+    \else \def\www@url{\\ {\www@host}/{$\sim$}{\www@id}/}\fi
+    \ifx\@empty\toname \def\to@name{\vspace{0.3in}}
+    \else \def\to@name{\toname}\fi
+    \ifx\@empty\toaddress \def\to@address{\vspace{1in}}
+    \else \def\to@address{\toaddress}\fi}
+
+\newcommand{\ps@labhead}{%
+  \finaldefs
+  \renewcommand{\@oddhead}{%    
+    %\hspace{-\headxoffset}
+    \begin{minipage}[t]{10cm}  % minipage for lhs
+      \textbf{\fromname} \newline
+      {\it \jobdesc} \newline
+      \vspace{2cm} \newline
+      \to@name \newline
+      \to@address \newline \newline
+      \@Ldate
+    \end{minipage}
+    \begin{minipage}[t]{6cm}  % minipage for rhs
+      \center
+      \vspace{3.5cm} %\newline
+      \includegraphics[scale=0.849]{\shield} \newline
+%      University identifier now includes department name
+%      %\includegraphics{cuni3.eps} \newline
+%      \makebox[62mm][s]{%
+%      \universityfont \bf \Ldeptname }
+    \end{minipage}
+    }%
+%  \providecommand{\@evenhead}{\@oddhead}%
+  \renewcommand{\@oddfoot}{%
+    { \fromaddressfont \linespread{\spreadamount}
+    \hfill
+    \makebox[4.4cm][l]{\parbox{4.4cm}{% both changed from 5cm
+      \fromaddress \vspace{0.6\baselineskip} \\ % Linespacing added PT
+      \telephonenum \\
+      \faxnum \\
+      \e@mail \\
+      \mbox{\www@url} % newline included if defined
+                      % also enclose in an mbox so that lines don't wrap
+      }}}
+%    \begin{minipage}{\textwidth}
+%    \begin{tabbing}
+%      \` \fromaddress \\
+%      \` \telephonenum \\
+%      \` \faxnum \\
+%      \` \e@mail 
+%    \end{tabbing}
+%    \end{minipage}
+    }%
+%  \providecommand{\@evenfoot}{}%
+  }
+
+% Standard letter class definitions.
+\def\Lname#1{\def\fromname{#1}}
+\def\fromname{}
+\def\Lsignature#1{\def\fromsig{#1}}
+\def\fromsig{}
+\long\def\Laddress#1{\def\fromaddress{#1}}
+\def\fromaddress{}
+\def\Llocation#1{\def\fromlocation{#1}}
+\def\fromlocation{}
+\def\Ltelephone#1{\def\telephonenum{#1}}
+\def\telephonenum{}
+
+% Some extra definitions:
+\def\Lextension#1{\def\telextensionnum{#1}}
+\def\telextensionnum{}
+\def\Lfax#1{\def\faxnum{#1}}
+\def\faxnum{}
+\def\Lemailid#1{\def\email@id{#1}}
+\def\email@id{}
+\def\Lemailaddr#1{\def\email@addr{#1}}
+\def\email@addr{eng.cam.ac.uk}
+\def\Lwwwid#1{\def\www@id{#1}}
+\def\www@id{}
+\def\Lwwwhost#1{\def\www@host{#1}}
+\def\www@host{www-sigproc.eng.cam.ac.uk}
+\def\Ljobdesc#1{\def\jobdesc{#1}}
+\def\jobdesc{}
+
+\def\up#1{\leavevmode \raise.16ex\hbox{#1}}
+
+% Define standard address data:
+% \Laddress {%
+%    \` \sc Signal Processing Group \\
+%    \` Department of Engineering\\
+%    \` Trumpington Street\\
+%    \` Cambridge\\
+%   \` CB2 1PZ, U.K.}
+\Laddress {%
+   Signal Processing Group \\ % Removed small caps
+   Department of Engineering\\
+   Trumpington Street\\
+   Cambridge\\
+   CB2 1PZ, U.K.}
+\Lextension {32767}
+\Ltelephone {Telephone: +44 1223 3\telextensionnum} % Internationalised
+\Lfax {Fax: +44 1223 332662} % Internationalised
+\def\Ldate#1{\def\@Ldate{#1}}
+\def\@Ldate{\today}
+% \def\Ldeptname{Department of Engineering} % Ignored -- included in shield eps
+
+% Custom dimensions: redefine as necessary
+\setlength{\headhmargin}{12mm}
+\setlength{\headvmargin}{8mm}
+\setlength{\headhoffset}{-4mm} % Fudges for printing position.
+\setlength{\headvoffset}{-4.5mm}
+
+% if more header space is required use \extrahead, although it causes
+% problems for multi-page letters
+\newcommand{\extrahead}[1]{
+\addtolength{\textheight}{-#1}
+\addtolength{\headsep}{#1}
+}

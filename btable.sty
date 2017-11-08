@@ -1,0 +1,134 @@
+%From: mathas_a@maths.su.oz.au ( Andrew )
+%Newsgroups: comp.text.tex,aus.tex
+%Subject: large table macros for TeX - btable.sty
+%Message-ID: <1990Jul6.052546.5887@metro.ucc.su.OZ.AU>
+%Date: 6 Jul 90 05:25:46 GMT
+%Sender: news@metro.ucc.su.OZ.AU (news)
+%Organization: Mathematics, University of Sydney
+%Lines: 123
+%Xref: jarthur comp.text.tex:1959
+%Replies-To: comp.text.tex
+ 
+%Several people have expressed an interest in the table macros which
+%I purported to have. They appear below. They do *not* work in LaTeX;
+%however after looking at the supertab macros for LaTeX (which several
+%people told me about), I think that I could modifify them to work 
+%with LaTeX. Any one who wishes to convert them feel free as I won't
+%have the time to do this until the end of August.
+ 
+%The basic macros were written primarily by Bob Howlett 
+%(howlett_r@maths.su.oz.au), with me watching and making the odd 
+%suggestion and modification. Consequently I have called the macros
+%the "btable.sty" macros. All credit should go to Bob.
+ 
+%The macros were written to typeset large character tables and 
+%consequently everything is put into math mode. To take them out of
+%math mode the definitions of \tableline and \nextbit need to  be
+%changed in the obvious way (ie. remove the "$"s).
+ 
+%The reason why I wanted these macros was that TeX and LaTeX both
+%spat the dummy and gave a memory overflow when I asked them to
+%do my tables by conventional methods. I also tried using the
+%tabular environment in LaTeX; butm for reasons which I can't 
+%comprehend (or through ill-use?), there seems to be a limit of 
+%approximately 15 columns in this evironment  - I needed up to
+%31 columns. Given this limit, the supertab environment written for LaTeX 
+%has the same restriction (it uses the tabular environment), and
+%so it would be worthwhile to convert these macros to LaTeX (they
+%don't work in LaTeX at the moment because \plainoutput is not 
+%defined in LaTeX).
+ 
+%These macros do not appear to have any memory restrictions: I ran
+%what turned out to be 22 pages of 31 column tables through TeX in
+%one hit without any complaints. As such they meet my specifications -
+%I hope that they also met yours.
+                                                           
+%Andrew Mathas.
+ 
+%  - smile at a stranger today and help make the world a better 
+%        place; while you're, at it, why not hug a friend!
+ 
+%______________________________________________________________________
+%% Written by Bob Howlett with modifications by Andrew Mathas 1990.
+%%% Table Format:                                                
+%%  All entries are formatted in math mode. A horizontal line
+%%  is placed under the table header, and a vertical line
+%%  separates the first and second columns. The first column
+%%  is left justified and all other columns are right justified.
+%%  Any row can have an arbitrary number of columns. The macros were
+%%  designed for TeXing character tables.
+%%% Table Syntax:
+% - table begun with \starttable
+% - columns separated by &
+% - each row ended by &!
+% - last row of table ended by &* and followed by \endtable
+% - table header specified by \tableheader ...&!
+% - if a blank line is wanted in the table put !\gap at the 
+%   end of the row
+% - to force a page break put !\pagegap at end of row
+% - pages are  broken naturally if \pagegap is not used, and the
+%   table header is put at the top of the following page.
+%%% Column spacing
+% - nameskip:   width of the title column
+% - colSkip:    width of the columns                 
+% - colsep:     separation between columns
+% - firstcol:   extra space to the left of the first column (in my 
+%       character tables the the first column (as distinct from the
+%       left-most column which "labels" each row), contains the 
+%       degrees of the characters which are often very large numbers
+%       and so I needed more space: eg. psi | xxxxxxx  xxxx  xxxx ...).
+\def\nameskip{\kern30pt}
+\def\colskip{\kern20pt}       
+\def\colsep{\kern3pt}
+\def\firstcol{\kern10pt}
+%%% Known bug
+%   If the row ends with ...& &! then the next row may be
+%   added to the end of this row. This can be avoided 
+%   by typing  ...&\relax&! instead.
+%%  Useful note:
+%   set \hsize=\wd0 to make the page width equal the table width
+ 
+%_________________________btable.sty____________________________________
+%% Written by Bob Howlett with modifications by Andrew Mathas 1990.
+\let\gap\relax
+\newif\ifpagegap
+\let\pagegap\pagegaptrue
+\def\spacing{height8.5ptdepth4.5pt}%
+\def\normalspacing{height8.5pt depth3.5pt}
+\def\moreheight{height9.5pt depth4.5pt\let\spacing\normalspacing}
+\def\muchmoreheight{height15pt depth4.5pt\let\spacing\normalspacing}
+\def\tableheader#1!{\setbox0\hbox{\def\spacing{height8.5ptdepth4.5pt}
+    \tableline#1*}%
+    \global\def\TableHeader{\copy0\hrule width\wd0\let\spacing\moreheight}}
+\def\starttable{\begingroup\offinterlineskip
+    \parskip=0pt\parindent=0pt%
+    \output={\plainoutput\TableHeader}
+    \TableHeader\startnewline}
+\def\startnewline{\hfil\par\futurelet\next\continue}
+\def\continue{\ifx\gap\next\message{III}\let\spacing\muchmoreheight\fi%
+   \ifx\pagegaptrue\next\vfill\eject\tableline\message{XXX}\pagegapfalse
+    \else\message{CCC}\tableline\fi}
+\def\tableline#1&{\noindent%
+    \rlap{$#1$}\nameskip\colsep\vrule\spacing\firstcol\nextbit}
+\def\nextbit#1&{\colskip\llap{$#1$}\colsep\check}
+\def\check#1{\if!#1\expandafter\startnewline\else\if*#1\hfil
+               \else\nextbit#1\relax\fi\fi}
+\def\endtable{\endgroup\vskip20pt}
+%-------------------------------------------------------------------------------
+\endinput 
+%A small example: larger examples available upon request 
+%(mathas_a@maths.su.oz.au).
+\tableheader C_1&C_2&C_3&!
+\starttable
+\chi&1&0&0&-1&!
+\chi&1&0&0&-1&!
+\chi&1&0&0&-1&!
+\chi&&0&0&-1&!\gap
+\chi&1&0&&-1&!
+\chi&1&0&&-1&!
+\chi&1&0&0&-1&!
+\phi&5&8&-1&2&!\pagegap
+\psi&1&2&&&!
+\alpha&59&0&*
+\endtable
+\bye                                            

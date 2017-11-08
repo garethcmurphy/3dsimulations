@@ -1,0 +1,5877 @@
+%%!PS-Adobe-3.0 EPSF-3.0
+%%Title: (epslatex/rj1b)
+%%Creator: gnuplot 4.0 patchlevel 0
+%%CreationDate: Thu Apr 13 17:33:30 2006
+%%BoundingBox: 72 72 485 320
+%%EndComments
+/Gpdict 100 dict def
+Gpdict begin
+/Color true def
+/Dashed true def
+/Gplinewidth 20.000 def
+/hpt_ 100.000 def
+/vpt_ 100.000 def
+ /hpt hpt_ def  
+ /vpt vpt_ def  
+ /Gppointsize_ 1 def 
+ /Gplinewidth_ 1 def 
+  
+ /ArrowDict 25 dict def  
+  
+ /M /moveto load def  
+ /L /lineto load def  
+ /R /rmoveto load def  
+ /V /rlineto load def  
+ /N {newpath moveto} bind def  
+ /f {rlineto fill} bind def  
+ /ED { exch def} bind def  
+  
+ /Atan {/atan load stopped {pop pop 0} if } def  
+ /Div {dup 0 eq { pop } { div } ifelse } def  
+ /Pyth {dup mul exch dup mul add sqrt} def  
+  
+ %Sizes  
+ /Gpsetlinewidth  
+ { 
+   dup 
+ %  /Gplinewidth_ ED %save 
+   Gplinewidth mul setlinewidth 
+ } def  
+  
+ /Gpsetpointsize   
+ {  
+   dup  
+   /Gppointsize_ ED %save 
+   dup  
+   vpt_ mul /vpt ED 
+   hpt_ mul /hpt ED  
+ } def  
+      
+ %Color  
+ /SetHsbColor { Color {sethsbcolor} {pop pop pop} ifelse } def  
+ /SetCmykColor { Color {setcmykcolor} {pop pop pop pop} ifelse } def  
+ /SimpleSetColor {6 div 1 1 SetHsbColor} def  
+ /Black {0 0 0 0 SetCmykColor} def  
+ /Red {0 SimpleSetColor} def  
+ /Blue {1 1 0 0 SetCmykColor} def  
+ /Cyan {1 0 0 0 SetCmykColor} def  
+ /Magenta {0 1 0 0 SetCmykColor} def 
+  
+ %Stroking  
+ /PathLength@ % z = z + sqrt{(x-xlast)^2 + (y-ylast)^2}  
+  {  
+    /z   
+    z  
+    y ylast sub  
+    x xlast sub  
+    Pyth  
+    add  
+    def   
+    /ylast y def  
+    /xlast x def  
+  } def  
+      
+  /PathLength  
+  {  
+    flattenpath  
+    /z 0 def  
+    { %move  
+      /ystart ED  
+      /xstart ED  
+      /xlast xstart def  
+      /ylast ystart def  
+    }  
+    { %line  
+      /y ED  
+      /x ED  
+      PathLength@  
+    }  
+    { %curve  
+    }  
+    { %close  
+      /x xstart def  
+      /y ystart def  
+      PathLength@   
+    }  
+    /pathforall load  
+    stopped {pop pop pop pop} if  
+    z  
+  } def  
+    
+ %dotsep DotLine  
+ /DotLine   
+ {  
+   PathLength /b ED   
+   /z ED   
+   /y currentlinewidth def   
+   /z y z add def   
+   [ 0 b b z Div round Div dup 0 le { pop 1 } if] 0 setdash   
+   1 setlinecap  
+ } def  
+  
+ /DashLine   
+  {  
+    PathLength /b ED   
+    /x ED   
+    /y ED   
+    /z y x add def   
+    b y sub z Div round z mul y add b exch Div 
+    dup  
+    y mul /y ED   
+    x mul /x ED   
+    x 0 gt y 0 gt and   
+    { [ y x ] 0 }  
+    { [ 1 0 ] 0 }  
+    ifelse  
+    setdash  
+  } def  
+  
+ /DashLineTwo 
+  {  
+    PathLength /b ED   
+    /u ED 
+    /v ED 
+    /x ED   
+    /y ED 
+    /z y x add u add v add def   
+    b y sub z Div round z mul y add b exch Div 
+    dup  
+    y mul /y ED   
+    x mul /x ED   
+    x 0 gt y 0 gt and   
+    { [ y x v u] 0 }  
+    { [ 1 0 ] 0 }  
+    ifelse  
+    setdash  
+  } def  
+      
+  
+ /DotLineStroke   
+ {  
+   gsave  
+     Dashed {currentlinewidth 2 mul DotLine} if  
+     stroke  
+   grestore  
+ } def  
+    
+ /SolidLineStroke  
+ {  
+   gsave  
+     [] 0 setdash  
+     stroke  
+   grestore  
+ } def  
+    
+ /DashLineStroke  
+ {  
+   gsave   
+     Dashed {Gplinewidth 8 mul Gplinewidth 5 mul DashLine} if  
+     stroke  
+   grestore  
+ } def  
+   
+ /DashDotLineStroke  
+ {  
+   gsave   
+     Dashed {Gplinewidth 8 mul Gplinewidth 5 mul 0 Gplinewidth 5 mul DashLineTwo} if  
+     stroke  
+   grestore  
+ } def  
+    
+ /DashShortLineStroke  
+ {  
+   gsave   
+     Dashed {Gplinewidth 4 mul dup DashLine} if  
+     stroke  
+   grestore  
+ } def  
+    
+ /ArrowHead  
+ {   
+   currentlinewidth mul add dup 2 div /w ED  
+   mul dup /h ED  
+   mul /a ED   
+   w neg h moveto   
+   0 0 L   
+   w h L   
+   w neg a neg rlineto   
+   gsave fill grestore   
+ } def  
+    
+  %/DrawArrowHead {1 dup scale 0.2 1.4 50 3 ArrowHead} def  
+  %%%%%  
+  %inset length dim num  
+  %arrowwidth = dim + num*linewidth  
+  %arrowlength = length*arrowwidth  
+  %arrowinset = width * inset  
+    
+  /DrawArrowHead {0.2 1.4 Gplinewidth 3 mul 4 ArrowHead} def  
+    
+  /Arrow  
+  {  
+    currentpoint  
+    4 2 roll  
+    ArrowDict  
+    begin  
+      /@mtrx matrix currentmatrix def  
+      gsave  
+        2 copy translate  
+        2 index sub neg exch  
+        3 index sub exch Atan  
+        rotate  
+        newpath  
+        DrawArrowHead  
+        @mtrx setmatrix  
+        currentpoint  
+      grestore  
+    end %ArrowDicht  
+    lineto  
+    Gpstroke  
+  } def  
+    
+  %axis  
+  /LTa   
+  {  
+    Gpstroke      
+    newpath  
+    0 setgray  
+    /Gpstroke {DotLineStroke newpath} def  
+  } def  
+    
+  %border  
+  /LTb  
+  {  
+    Gpstroke      
+    newpath  
+    0 setgray  
+    /Gpstroke {SolidLineStroke newpath} def  
+  } def  
+    
+  /LT0  
+  {  
+    Gpstroke      
+    newpath  
+    Red  
+    /Gpstroke {SolidLineStroke newpath} def  
+  } def  
+    
+  /LT1  
+  {  
+    Gpstroke      
+    newpath  
+    Blue  
+    /Gpstroke {DashLineStroke newpath} def  
+  } def  
+    
+  /LT2   
+  {  
+    Gpstroke  
+    newpath  
+    Cyan  
+    /Gpstroke {DashShortLineStroke newpath} def  
+  } def  
+  
+  /LT3   
+  {  
+    Gpstroke  
+    newpath  
+    Magenta  
+    /Gpstroke {DashDotLineStroke newpath} def  
+  } def  
+    
+  /Pnt  
+  {  
+    gsave   
+      [] 0 setdash  
+      1 setlinecap   
+      Gplinewidth Gppointsize_ mul setlinewidth 
+      M  
+      0 0 V  
+      stroke  
+    grestore  
+  } def  
+    
+  /DiaPath  
+  {  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      2 copy   
+      newpath  
+      vpt add moveto  
+      hpt neg vpt neg rlineto   
+      hpt vpt neg rlineto  
+      hpt vpt rlineto   
+      hpt neg vpt rlineto  
+      closepath  
+  } def  
+    
+  /Dia   
+  {   
+    gsave  
+      DiaPath  
+      stroke  
+    grestore  
+  } def  
+    
+  /DaF  
+  {  
+    gsave  
+      DiaPath  
+      fill  
+    grestore  
+  } def  
+    
+  /Crc  
+  {  
+    gsave  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      newpath  
+      vpt 0.85 mul 0 360 arc  
+      closepath  
+      stroke  
+    grestore  
+  } def  
+        
+    
+  /Crs  
+  {  
+    gsave  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      0 setlinecap  
+      newpath  
+      vpt sub  
+      moveto  
+      0 vpt 2 mul rlineto  
+      hpt vpt neg rmoveto  
+      hpt 2 mul neg 0 rlineto  
+      stroke  
+    grestore  
+  } def  
+    
+  /CrX  
+  {  
+  gsave  
+   translate  
+   45 rotate  
+   0 0 Crs  
+  grestore  
+  } def  
+    
+  /CcF  
+  {  
+    gsave  
+      [] 0 setdash  
+      Gplinewidth setlinewidth  
+      newpath  
+      vpt 0.85 mul 0 360 arc  
+      closepath  
+      fill  
+    grestore  
+  } def  
+    
+  /Box  
+  {  
+     gsave  
+       translate  
+       45 rotate  
+       0 0 DiaPath  
+       stroke  
+     grestore  
+  } def  
+    
+  /BxF  
+  {  
+     gsave  
+       translate  
+       45 rotate  
+       0 0 DiaPath  
+       fill  
+     grestore  
+  } def  
+    
+  /Gpstroke {stroke} def  
+  1 setlinecap  
+  1 setlinejoin 
+ %
+ % PostScript level 2 pattern fill definitions
+ % Ethan A Merritt April 2003
+ %
+ % Level-1 compatible emulation for rectfill
+  /RF { gsave newpath 4 -2 roll moveto dup 0 exch rlineto
+    exch 0 rlineto neg 0 exch rlineto closepath fill grestore
+  } bind def
+  /BoxFill { gsave RF fill grestore } def 
+  /Blank { 0 0 M 0 8 L 8 8 L 8 0 L 0 0 L
+           1.0 setgray fill 0.0 setgray 0.5 setlinewidth } bind def
+  /Tile8x8 { /PaintType 1 def /PatternType 1 def /TilingType 1 def
+             /BBox [0 0 8 8] def /XStep 8 def /YStep 8 def
+  } bind def
+  /P1D 12 dict def P1D begin
+      Tile8x8 /PaintProc { Blank 0 0 M 8 8 L 0 8 M 8 0 L stroke } def
+  end P1D matrix makepattern
+  /Pattern1 exch def
+  /P2D 12 dict def P2D begin
+      Tile8x8 /PaintProc { Blank 0 0 M 8 8 L 0 8 M 8 0 L stroke
+                           0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke } def
+  end P2D matrix makepattern
+  /Pattern2 exch def
+  /P3D 12 dict def P3D begin
+      Tile8x8 /PaintProc { Blank 0 0 M 0 8 L
+                          8 8 L 8 0 L 0 0 L fill } def
+  end P3D matrix makepattern
+  /Pattern3 exch def
+  /P4D 12 dict def P4D begin
+      Tile8x8 /PaintProc { Blank -4 8 M 8 -4 L
+                          0 12 M 12 0 L stroke } def
+  end P4D matrix makepattern
+  /Pattern4 exch def
+  /P5D 12 dict def P5D begin
+      Tile8x8 /PaintProc { Blank -4 0 M 8 12 L
+                          0 -4 M 12 8 L stroke } def
+  end P5D matrix makepattern
+  /Pattern5 exch def
+  /P6D 12 dict def P6D begin
+      Tile8x8 /PaintProc { Blank -2 8 M 4 -4 L
+                          0 12 M 8 -4 L 4 12 M 10 0 L stroke } def
+  end P6D matrix makepattern
+  /Pattern6 exch def
+  /P7D 12 dict def P7D begin
+      Tile8x8 /PaintProc { Blank -2 0 M 4 12 L
+                          0 -4 M 8 12 L 4 -4 M 10 8 L stroke } def
+  end P7D matrix makepattern
+  /Pattern7 exch def
+  /P8D 12 dict def P8D begin
+      Tile8x8 /PaintProc { Blank 8 -2 M -4 4 L
+                          12 0 M -4 8 L 12 4 M 0 10 L stroke } def
+  end P8D matrix makepattern
+  /Pattern8 exch def
+  /P9D 12 dict def P9D begin
+      Tile8x8 /PaintProc { Blank 0 -2 M 12 4 L
+                          -4 0 M 12 8 L -4 4 M 8 10 L stroke } def
+  end P9D matrix makepattern
+  /Pattern9 exch def
+ 
+end
+%%%%EndProlog
+Gpdict begin
+gsave
+72 72 translate
+0.0200 0.0200 scale
+0 setgray
+newpath
+1.000 Gpsetpointsize
+1.000 Gpsetlinewidth
+1.000 Gpsetlinewidth
+LTb
+1957 8697 M
+300 0 V
+Gpstroke
+6288 8697 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 9214 M
+300 0 V
+Gpstroke
+6288 9214 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 9730 M
+300 0 V
+Gpstroke
+6288 9730 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 10247 M
+300 0 V
+Gpstroke
+6288 10247 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 10763 M
+300 0 V
+Gpstroke
+6288 10763 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 11280 M
+300 0 V
+Gpstroke
+6288 11280 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 11796 M
+300 0 V
+Gpstroke
+6288 11796 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1957 8697 M
+4331 0 V
+0 3099 V
+-4331 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+4488 11246 M
+1300 0 V
+Gpstroke
+1957 9730 M
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 22 V
+9 323 V
+9 463 V
+8 126 V
+9 15 V
+9 2 V
+8 0 V
+9 2 V
+9 1 V
+8 2 V
+9 1 V
+9 0 V
+8 -1 V
+9 -2 V
+9 -4 V
+8 -5 V
+9 -3 V
+9 0 V
+8 65 V
+9 263 V
+9 306 V
+8 147 V
+9 15 V
+9 -57 V
+9 -295 V
+8 -462 V
+9 -521 V
+9 -480 V
+8 -370 V
+9 -244 V
+9 -137 V
+8 -68 V
+9 -31 V
+9 -12 V
+8 -4 V
+9 -2 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 -1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+8 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 1 V
+8 0 V
+9 1 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 8697 M
+4331 0 V
+0 3099 V
+-4331 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 8697 M
+300 0 V
+Gpstroke
+12912 8697 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 9041 M
+300 0 V
+Gpstroke
+12912 9041 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 9386 M
+300 0 V
+Gpstroke
+12912 9386 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 9730 M
+300 0 V
+Gpstroke
+12912 9730 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 10074 M
+300 0 V
+Gpstroke
+12912 10074 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 10419 M
+300 0 V
+Gpstroke
+12912 10419 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 10763 M
+300 0 V
+Gpstroke
+12912 10763 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 11107 M
+300 0 V
+Gpstroke
+12912 11107 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 11452 M
+300 0 V
+Gpstroke
+12912 11452 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 11796 M
+300 0 V
+Gpstroke
+12912 11796 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+8331 8697 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+11112 11246 M
+1300 0 V
+Gpstroke
+8331 8697 M
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+8 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 14 V
+9 295 V
+9 467 V
+9 129 V
+10 15 V
+9 2 V
+9 0 V
+9 2 V
+9 1 V
+10 1 V
+9 1 V
+9 1 V
+9 0 V
+9 -1 V
+9 -2 V
+10 -2 V
+9 -1 V
+9 2 V
+9 75 V
+9 330 V
+10 432 V
+9 326 V
+9 151 V
+9 44 V
+9 8 V
+9 0 V
+10 -1 V
+9 -1 V
+9 -1 V
+9 -1 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+10 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+10 -1 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 2 V
+9 1 V
+9 1 V
+9 3 V
+10 5 V
+9 7 V
+9 11 V
+9 14 V
+9 14 V
+10 13 V
+9 11 V
+9 7 V
+9 5 V
+9 3 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 -1 V
+9 0 V
+9 0 V
+9 0 V
+10 1 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+10 -1 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+10 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 -1 V
+10 0 V
+9 -1 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+10 1 V
+9 1 V
+9 0 V
+9 0 V
+9 -1 V
+10 0 V
+9 -1 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 2 V
+9 1 V
+9 1 V
+9 0 V
+10 0 V
+9 0 V
+9 -1 V
+9 -1 V
+9 -1 V
+9 -1 V
+10 0 V
+9 0 V
+9 1 V
+9 1 V
+9 2 V
+10 2 V
+9 1 V
+9 -1 V
+9 0 V
+9 -1 V
+9 -1 V
+10 -2 V
+9 0 V
+9 -1 V
+9 1 V
+9 0 V
+10 1 V
+9 2 V
+9 1 V
+9 1 V
+9 0 V
+9 0 V
+10 -1 V
+9 -1 V
+9 -2 V
+9 -1 V
+9 -1 V
+10 0 V
+9 1 V
+9 1 V
+9 1 V
+9 1 V
+9 2 V
+10 0 V
+9 0 V
+9 0 V
+9 -1 V
+9 -1 V
+10 -2 V
+9 -3 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+10 1 V
+9 4 V
+9 3 V
+9 2 V
+9 0 V
+10 -1 V
+9 -1 V
+9 -4 V
+9 -7 V
+9 -7 V
+9 -2 V
+10 0 V
+9 0 V
+9 4 V
+9 8 V
+9 11 V
+10 12 V
+9 15 V
+9 14 V
+9 14 V
+9 13 V
+9 12 V
+10 12 V
+9 12 V
+9 12 V
+9 12 V
+9 12 V
+9 13 V
+10 14 V
+9 15 V
+9 15 V
+9 17 V
+9 16 V
+10 18 V
+9 18 V
+9 18 V
+9 19 V
+9 18 V
+9 19 V
+10 19 V
+9 20 V
+9 19 V
+9 19 V
+9 19 V
+10 20 V
+9 20 V
+9 19 V
+9 20 V
+9 19 V
+9 20 V
+10 19 V
+9 20 V
+9 19 V
+9 19 V
+9 18 V
+10 18 V
+9 17 V
+9 14 V
+9 11 V
+9 7 V
+9 1 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8331 8697 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 8697 M
+300 0 V
+Gpstroke
+19743 8697 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 9041 M
+300 0 V
+Gpstroke
+19743 9041 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 9386 M
+300 0 V
+Gpstroke
+19743 9386 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 9730 M
+300 0 V
+Gpstroke
+19743 9730 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 10074 M
+300 0 V
+Gpstroke
+19743 10074 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 10419 M
+300 0 V
+Gpstroke
+19743 10419 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 10763 M
+300 0 V
+Gpstroke
+19743 10763 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 11107 M
+300 0 V
+Gpstroke
+19743 11107 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 11452 M
+300 0 V
+Gpstroke
+19743 11452 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 11796 M
+300 0 V
+Gpstroke
+19743 11796 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+15162 8697 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+17943 11246 M
+1300 0 V
+Gpstroke
+15162 8844 M
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+8 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 19 V
+9 427 V
+9 912 V
+9 311 V
+10 40 V
+9 5 V
+9 0 V
+9 2 V
+9 2 V
+10 0 V
+9 0 V
+9 -2 V
+9 0 V
+9 -2 V
+9 -3 V
+10 -2 V
+9 -2 V
+9 0 V
+9 30 V
+9 170 V
+10 303 V
+9 294 V
+9 166 V
+9 36 V
+9 -105 V
+9 -188 V
+10 -213 V
+9 -200 V
+9 -152 V
+9 -101 V
+9 -57 V
+10 -28 V
+9 -12 V
+9 -5 V
+9 -1 V
+9 -2 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 0 V
+9 0 V
+9 1 V
+9 2 V
+10 2 V
+9 3 V
+9 2 V
+9 0 V
+9 2 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 -2 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 2 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -2 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 2 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 -2 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 2 V
+10 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+10 -2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 -1 V
+9 -2 V
+9 0 V
+10 0 V
+9 0 V
+9 2 V
+9 0 V
+9 1 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 -1 V
+9 -2 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 4 V
+9 1 V
+9 2 V
+9 0 V
+10 -2 V
+9 0 V
+9 -3 V
+9 -5 V
+9 -4 V
+9 -1 V
+10 0 V
+9 0 V
+9 3 V
+9 5 V
+9 7 V
+10 9 V
+9 10 V
+9 10 V
+9 9 V
+9 9 V
+9 10 V
+10 7 V
+9 8 V
+9 9 V
+9 9 V
+9 8 V
+9 9 V
+10 10 V
+9 10 V
+9 12 V
+9 11 V
+9 12 V
+10 14 V
+9 12 V
+9 13 V
+9 13 V
+9 13 V
+9 14 V
+10 14 V
+9 14 V
+9 15 V
+9 14 V
+9 14 V
+10 13 V
+9 16 V
+9 14 V
+9 13 V
+9 16 V
+9 14 V
+10 15 V
+9 14 V
+9 15 V
+9 14 V
+9 14 V
+10 14 V
+9 12 V
+9 10 V
+9 9 V
+9 5 V
+9 2 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 8697 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 4599 M
+300 0 V
+Gpstroke
+6288 4599 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 4881 M
+300 0 V
+Gpstroke
+6288 4881 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 5162 M
+300 0 V
+Gpstroke
+6288 5162 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 5444 M
+300 0 V
+Gpstroke
+6288 5444 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 5726 M
+300 0 V
+Gpstroke
+6288 5726 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 6007 M
+300 0 V
+Gpstroke
+6288 6007 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 6289 M
+300 0 V
+Gpstroke
+6288 6289 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 6570 M
+300 0 V
+Gpstroke
+6288 6570 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 6852 M
+300 0 V
+Gpstroke
+6288 6852 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 7134 M
+300 0 V
+Gpstroke
+6288 7134 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 7415 M
+300 0 V
+Gpstroke
+6288 7415 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 7697 M
+300 0 V
+Gpstroke
+6288 7697 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1957 4599 M
+4331 0 V
+0 3098 V
+-4331 0 V
+0 -3098 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+4488 7147 M
+1300 0 V
+Gpstroke
+1957 7415 M
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 -62 V
+9 -924 V
+9 -1067 V
+8 -265 V
+9 -30 V
+9 -3 V
+8 -2 V
+9 -1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 1 V
+9 2 V
+9 1 V
+8 2 V
+9 0 V
+9 0 V
+8 -15 V
+9 -69 V
+9 -87 V
+8 -62 V
+9 -25 V
+9 -6 V
+9 -3 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 -1 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 -1 V
+9 0 V
+9 0 V
+8 -2 V
+9 0 V
+9 0 V
+8 0 V
+9 -1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 -2 V
+9 2 V
+9 0 V
+8 1 V
+9 2 V
+9 2 V
+8 5 V
+9 7 V
+9 9 V
+8 13 V
+9 11 V
+9 13 V
+9 9 V
+8 7 V
+9 4 V
+9 1 V
+8 0 V
+9 0 V
+9 2 V
+8 0 V
+9 1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 -1 V
+9 0 V
+9 -2 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 2 V
+9 0 V
+8 1 V
+9 0 V
+9 -1 V
+9 0 V
+8 -2 V
+9 -1 V
+9 -2 V
+8 0 V
+9 0 V
+9 0 V
+8 2 V
+9 1 V
+9 2 V
+8 1 V
+9 0 V
+9 0 V
+8 -1 V
+9 -2 V
+9 -1 V
+8 -3 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 3 V
+8 2 V
+9 1 V
+9 0 V
+9 0 V
+8 0 V
+9 -3 V
+9 -3 V
+8 -2 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 3 V
+8 3 V
+9 1 V
+9 0 V
+8 0 V
+9 -1 V
+9 -3 V
+8 -4 V
+9 -5 V
+9 -1 V
+8 0 V
+9 0 V
+9 3 V
+8 4 V
+9 4 V
+9 4 V
+9 0 V
+8 0 V
+9 0 V
+9 -2 V
+8 -5 V
+9 -4 V
+9 -3 V
+8 0 V
+9 0 V
+9 3 V
+8 6 V
+9 7 V
+9 5 V
+8 3 V
+9 0 V
+9 0 V
+8 -4 V
+9 -6 V
+9 -5 V
+8 -4 V
+9 0 V
+9 0 V
+8 1 V
+9 6 V
+9 7 V
+9 5 V
+8 2 V
+9 0 V
+9 0 V
+8 -3 V
+9 -6 V
+9 -5 V
+8 -6 V
+9 -1 V
+9 0 V
+8 0 V
+9 4 V
+9 5 V
+8 6 V
+9 4 V
+9 2 V
+8 0 V
+9 0 V
+9 -2 V
+8 -5 V
+9 -9 V
+9 -8 V
+8 -7 V
+9 -4 V
+9 -2 V
+9 3 V
+8 7 V
+9 10 V
+9 11 V
+8 7 V
+9 2 V
+9 0 V
+8 -6 V
+9 -17 V
+9 -25 V
+8 -26 V
+9 -11 V
+9 -1 V
+8 4 V
+9 14 V
+9 30 V
+8 42 V
+9 49 V
+9 54 V
+8 53 V
+9 52 V
+9 51 V
+9 48 V
+8 45 V
+9 43 V
+9 44 V
+8 44 V
+9 46 V
+9 50 V
+8 50 V
+9 54 V
+9 57 V
+8 60 V
+9 62 V
+9 62 V
+8 64 V
+9 65 V
+9 66 V
+8 66 V
+9 67 V
+9 66 V
+8 67 V
+9 67 V
+9 66 V
+8 67 V
+9 67 V
+9 66 V
+9 66 V
+8 66 V
+9 65 V
+9 66 V
+8 64 V
+9 65 V
+9 63 V
+8 62 V
+9 60 V
+9 58 V
+8 53 V
+9 46 V
+9 36 V
+8 21 V
+9 4 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1957 4599 M
+4331 0 V
+0 3098 V
+-4331 0 V
+0 -3098 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 4599 M
+300 0 V
+Gpstroke
+12912 4599 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 4943 M
+300 0 V
+Gpstroke
+12912 4943 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 5287 M
+300 0 V
+Gpstroke
+12912 5287 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 5632 M
+300 0 V
+Gpstroke
+12912 5632 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 5976 M
+300 0 V
+Gpstroke
+12912 5976 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 6320 M
+300 0 V
+Gpstroke
+12912 6320 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 6664 M
+300 0 V
+Gpstroke
+12912 6664 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 7009 M
+300 0 V
+Gpstroke
+12912 7009 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 7353 M
+300 0 V
+Gpstroke
+12912 7353 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 7697 M
+300 0 V
+Gpstroke
+12912 7697 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+8581 4599 M
+4331 0 V
+0 3098 V
+-4331 0 V
+0 -3098 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+11112 7147 M
+1300 0 V
+Gpstroke
+8581 7009 M
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 24 V
+9 264 V
+9 250 V
+8 57 V
+9 8 V
+9 1 V
+8 0 V
+9 -1 V
+9 -2 V
+8 -2 V
+9 -3 V
+9 -3 V
+8 0 V
+9 0 V
+9 3 V
+8 4 V
+9 1 V
+9 -4 V
+8 -155 V
+9 -584 V
+9 -751 V
+8 -642 V
+9 -384 V
+9 -140 V
+9 -38 V
+8 -10 V
+9 0 V
+9 0 V
+8 -2 V
+9 -2 V
+9 -1 V
+8 -2 V
+9 -3 V
+9 -2 V
+8 -2 V
+9 -3 V
+9 -2 V
+8 -3 V
+9 -2 V
+9 -4 V
+8 -3 V
+9 -2 V
+9 -3 V
+8 -5 V
+9 -4 V
+9 -5 V
+9 -5 V
+8 -7 V
+9 -7 V
+9 -9 V
+8 -8 V
+9 -9 V
+9 -10 V
+8 -9 V
+9 -8 V
+9 -9 V
+8 -5 V
+9 -2 V
+9 0 V
+8 4 V
+9 8 V
+9 14 V
+8 22 V
+9 33 V
+9 53 V
+8 93 V
+9 154 V
+9 224 V
+8 290 V
+9 329 V
+9 335 V
+9 300 V
+8 234 V
+9 155 V
+9 76 V
+8 15 V
+9 2 V
+9 0 V
+8 0 V
+9 -1 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 1 V
+9 0 V
+8 0 V
+9 0 V
+9 -1 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 1 V
+8 0 V
+9 0 V
+9 -1 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 -1 V
+9 0 V
+8 -1 V
+9 0 V
+9 0 V
+8 1 V
+9 0 V
+9 1 V
+8 1 V
+9 1 V
+9 0 V
+8 0 V
+9 -1 V
+9 -1 V
+8 -2 V
+9 -2 V
+9 -2 V
+8 -2 V
+9 -2 V
+9 -2 V
+9 -2 V
+8 -2 V
+9 -1 V
+9 -2 V
+8 -2 V
+9 -2 V
+9 -1 V
+8 -2 V
+9 -2 V
+9 -3 V
+8 -2 V
+9 -2 V
+9 -3 V
+8 -2 V
+9 -3 V
+9 -2 V
+8 -3 V
+9 -2 V
+9 -3 V
+8 -2 V
+9 -3 V
+9 -2 V
+8 -3 V
+9 -2 V
+9 -2 V
+9 -3 V
+8 -2 V
+9 -3 V
+9 -2 V
+8 -3 V
+9 -2 V
+9 -2 V
+8 -2 V
+9 -3 V
+9 -2 V
+8 -2 V
+9 -1 V
+9 -2 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8581 4599 M
+4331 0 V
+0 3098 V
+-4331 0 V
+0 -3098 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15412 4599 M
+300 0 V
+Gpstroke
+19743 4599 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15412 5374 M
+300 0 V
+Gpstroke
+19743 5374 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15412 6148 M
+300 0 V
+Gpstroke
+19743 6148 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15412 6923 M
+300 0 V
+Gpstroke
+19743 6923 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15412 7697 M
+300 0 V
+Gpstroke
+19743 7697 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+15412 4599 M
+4331 0 V
+0 3098 V
+-4331 0 V
+0 -3098 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+17943 7147 M
+1300 0 V
+Gpstroke
+15412 6148 M
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+9 0 V
+8 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15412 4599 M
+4331 0 V
+0 3098 V
+-4331 0 V
+0 -3098 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 624 M
+300 0 V
+Gpstroke
+6288 624 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 934 M
+300 0 V
+Gpstroke
+6288 934 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 1244 M
+300 0 V
+Gpstroke
+6288 1244 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 1554 M
+300 0 V
+Gpstroke
+6288 1554 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 1864 M
+300 0 V
+Gpstroke
+6288 1864 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 2173 M
+300 0 V
+Gpstroke
+6288 2173 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 2483 M
+300 0 V
+Gpstroke
+6288 2483 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 2793 M
+300 0 V
+Gpstroke
+6288 2793 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 3103 M
+300 0 V
+Gpstroke
+6288 3103 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 3413 M
+300 0 V
+Gpstroke
+6288 3413 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 3723 M
+300 0 V
+Gpstroke
+6288 3723 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+1707 624 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+4488 3173 M
+1300 0 V
+Gpstroke
+1707 1864 M
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+8 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 38 V
+9 549 V
+9 779 V
+9 211 V
+10 28 V
+9 6 V
+9 -3 V
+9 3 V
+9 -3 V
+10 0 V
+9 -3 V
+9 -3 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 -91 V
+9 -390 V
+10 -598 V
+9 -592 V
+9 -388 V
+9 -140 V
+9 -27 V
+9 -2 V
+10 4 V
+9 6 V
+9 3 V
+9 2 V
+9 1 V
+10 1 V
+9 0 V
+9 1 V
+9 0 V
+9 1 V
+9 0 V
+10 0 V
+9 1 V
+9 0 V
+9 1 V
+9 1 V
+10 0 V
+9 1 V
+9 0 V
+9 1 V
+9 2 V
+9 1 V
+10 1 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+9 2 V
+10 2 V
+9 1 V
+9 1 V
+9 0 V
+9 0 V
+10 0 V
+9 -2 V
+9 -3 V
+9 -3 V
+9 -6 V
+9 -10 V
+10 -17 V
+9 -28 V
+9 -41 V
+9 -53 V
+9 -61 V
+10 -61 V
+9 -56 V
+9 -43 V
+9 -29 V
+9 -14 V
+9 -3 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 -1 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 1 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 -1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 1 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 -1 V
+9 -1 V
+9 0 V
+9 -1 V
+10 0 V
+9 0 V
+9 1 V
+9 1 V
+9 1 V
+10 2 V
+9 1 V
+9 2 V
+9 2 V
+9 1 V
+9 2 V
+10 1 V
+9 2 V
+9 1 V
+9 2 V
+9 1 V
+9 2 V
+10 2 V
+9 1 V
+9 2 V
+9 2 V
+9 2 V
+10 2 V
+9 3 V
+9 2 V
+9 2 V
+9 2 V
+9 3 V
+10 2 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+10 2 V
+9 2 V
+9 2 V
+9 3 V
+9 2 V
+9 2 V
+10 2 V
+9 3 V
+9 2 V
+9 2 V
+9 2 V
+10 2 V
+9 2 V
+9 2 V
+9 1 V
+9 1 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1707 624 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 624 M
+300 0 V
+Gpstroke
+12912 624 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 1140 M
+300 0 V
+Gpstroke
+12912 1140 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 1657 M
+300 0 V
+Gpstroke
+12912 1657 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 2173 M
+300 0 V
+Gpstroke
+12912 2173 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 2690 M
+300 0 V
+Gpstroke
+12912 2690 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 3206 M
+300 0 V
+Gpstroke
+12912 3206 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 3723 M
+300 0 V
+Gpstroke
+12912 3723 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+8831 624 M
+4081 0 V
+0 3099 V
+-4081 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+11112 3173 M
+1300 0 V
+Gpstroke
+8831 2173 M
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+7 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+8 0 V
+9 0 V
+8 0 V
+8 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+8831 624 M
+4081 0 V
+0 3099 V
+-4081 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 624 M
+300 0 V
+Gpstroke
+19743 624 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 968 M
+300 0 V
+Gpstroke
+19743 968 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 1313 M
+300 0 V
+Gpstroke
+19743 1313 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 1657 M
+300 0 V
+Gpstroke
+19743 1657 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 2001 M
+300 0 V
+Gpstroke
+19743 2001 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 2346 M
+300 0 V
+Gpstroke
+19743 2346 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 2690 M
+300 0 V
+Gpstroke
+19743 2690 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 3034 M
+300 0 V
+Gpstroke
+19743 3034 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 3379 M
+300 0 V
+Gpstroke
+19743 3379 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 3723 M
+300 0 V
+Gpstroke
+19743 3723 M
+-300 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+1.000 Gpsetlinewidth
+LTb
+15162 624 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+1.000 Gpsetlinewidth
+LT0
+LTb
+LT0
+17943 3173 M
+1300 0 V
+Gpstroke
+15162 771 M
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+8 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 19 V
+9 427 V
+9 912 V
+9 311 V
+10 40 V
+9 5 V
+9 0 V
+9 2 V
+9 2 V
+10 0 V
+9 0 V
+9 -2 V
+9 0 V
+9 -2 V
+9 -3 V
+10 -2 V
+9 -2 V
+9 0 V
+9 30 V
+9 170 V
+10 303 V
+9 294 V
+9 166 V
+9 36 V
+9 -105 V
+9 -188 V
+10 -213 V
+9 -200 V
+9 -152 V
+9 -101 V
+9 -57 V
+10 -28 V
+9 -12 V
+9 -5 V
+9 -1 V
+9 -2 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 0 V
+9 0 V
+9 1 V
+9 2 V
+10 2 V
+9 3 V
+9 2 V
+9 0 V
+9 2 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 -2 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 2 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -2 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 2 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 -2 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 2 V
+10 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 -1 V
+10 -2 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 2 V
+9 1 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 -1 V
+9 -2 V
+9 0 V
+10 0 V
+9 0 V
+9 2 V
+9 0 V
+9 1 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 -1 V
+9 -2 V
+9 -2 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 4 V
+9 1 V
+9 2 V
+9 0 V
+10 -2 V
+9 0 V
+9 -3 V
+9 -5 V
+9 -4 V
+9 -1 V
+10 0 V
+9 0 V
+9 3 V
+9 5 V
+9 7 V
+10 9 V
+9 10 V
+9 10 V
+9 9 V
+9 9 V
+9 10 V
+10 7 V
+9 8 V
+9 9 V
+9 9 V
+9 8 V
+9 9 V
+10 10 V
+9 10 V
+9 12 V
+9 11 V
+9 12 V
+10 14 V
+9 12 V
+9 13 V
+9 13 V
+9 13 V
+9 14 V
+10 14 V
+9 14 V
+9 15 V
+9 14 V
+9 14 V
+10 13 V
+9 16 V
+9 14 V
+9 13 V
+9 16 V
+9 14 V
+10 15 V
+9 14 V
+9 15 V
+9 14 V
+9 14 V
+10 14 V
+9 12 V
+9 10 V
+9 9 V
+9 5 V
+9 2 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+9 0 V
+10 0 V
+9 0 V
+9 0 V
+Gpstroke
+1.000 Gpsetlinewidth
+LTb
+15162 624 M
+4581 0 V
+0 3099 V
+-4581 0 V
+0 -3099 V
+1.000 Gpsetpointsize
+Gpstroke
+grestore
+end
+showpage
+%%%%EOF

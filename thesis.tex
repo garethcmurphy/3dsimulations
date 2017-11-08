@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt]{book}
+\input{preamble.tex}
+%%if printing drafts:
+%\draftmark{Author}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+urlcolor=cyan,
+pdfborder= 0 0 0
+}
+\usepackage{doi}
+\usepackage{minitoc}
+\usepackage{natbib}
+
+\bibliographystyle{aa}
+\usepackage{aas_macros}
+\usepackage{kevsphdthesis}
+
+
+\usepackage{graphicx}
+\usepackage{rotating,times,pictex,graphicx,latexsym}
+\usepackage{color}
+\usepackage{longtable}
+
+
+
+\begin{document}
+\frontmatter
+\dominitoc
+
+%thesis.toc and uncomment \nofiles above so it won't be over written.
+
+
+
+
+
+\include{titlepage}
+\maketitle
+
+\input{Declaration.tex}
+\pagebreak
+
+%\input{FINAL_thesisabstract.tex}
+\input{summary.tex}
+\makesummary
+\adjustmtc
+\pagebreak
+
+\input{acknowledgments.tex}
+%\adjustmtc
+\pagebreak
+
+\input{Publications.tex}
+\adjustmtc
+\pagebreak
+
+%\adjustmtc
+
+
+\tableofcontents
+\listoffigures
+
+\listoftables
+
+
+
+\mainmatter \pagestyle{labheadings}
+
+\adjustmtc
+
+% Include the chapter files 
+%\part{Part I: Introduction}
+%\adjustmtc
+\include{Introduction}
+\include{NumericalMethod}
+\include{Verification}
+\include{BinaryJets}
+\include{EvacCavity}
+%\include{Extinction}
+\include{Conclusion}
+%\include ... 
+\newpage
+% The bibliography
+%\bibliographystyle{plain}
+%\bibliography{}
+{
+%\tiny
+\bibliography{thesis}
+}
+\appendix
+\include{Index}
+\include{MHD}
+%\include{Grid}
+\end{document}
+
+

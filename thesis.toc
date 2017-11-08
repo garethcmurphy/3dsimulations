@@ -1,0 +1,134 @@
+\contentsline {chapter}{Contents}{vii}{section*.6}
+\contentsline {chapter}{List of Figures}{xiii}{section*.8}
+\contentsline {chapter}{List of Tables}{xxi}{section*.10}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.11}
+\contentsline {section}{\numberline {1.1}Jets and outflows in nature}{1}{section.12}
+\contentsline {section}{\numberline {1.2}Jets and star formation}{3}{section.15}
+\contentsline {subsection}{\numberline {1.2.1}Gravitational collapse mediated by magnetic fields and turbulence}{3}{subsection.16}
+\contentsline {subsection}{\numberline {1.2.2}Angular momentum problem}{5}{subsection.19}
+\contentsline {subsection}{\numberline {1.2.3}Magnetocentrifugal launching}{6}{subsection.20}
+\contentsline {subsection}{\numberline {1.2.4}Binary Star Formation}{7}{subsection.22}
+\contentsline {subsection}{\numberline {1.2.5}Empirical Classification for Low Mass Stars}{9}{subsection.24}
+\contentsline {subsection}{\numberline {1.2.6}High-Mass Stars}{9}{subsection.25}
+\contentsline {section}{\numberline {1.3}Rival jet launching theories}{11}{section.27}
+\contentsline {subsection}{\numberline {1.3.1}Stellar winds}{11}{subsection.28}
+\contentsline {subsection}{\numberline {1.3.2}Disk-driven winds}{11}{subsection.30}
+\contentsline {subsection}{\numberline {1.3.3}Boundary-layer driven winds}{13}{subsection.31}
+\contentsline {section}{\numberline {1.4}Jets and shocks}{14}{section.33}
+\contentsline {subsection}{\numberline {1.4.1}Shocks}{14}{subsection.34}
+\contentsline {subsection}{\numberline {1.4.2}Radiative shocks and ``Forbidden'' line emission}{16}{subsection.41}
+\contentsline {subsection}{\numberline {1.4.3}Magnetohydrodynamic shocks}{17}{subsection.43}
+\contentsline {subsection}{\numberline {1.4.4}Jump-type (``J-type'') shocks}{18}{subsection.46}
+\contentsline {subsection}{\numberline {1.4.5}Continuous-type (``C-type'') shocks}{19}{subsection.47}
+\contentsline {subsection}{\numberline {1.4.6}Bow shocks and Internal Working Surfaces}{19}{subsection.49}
+\contentsline {subsection}{\numberline {1.4.7}Jet diagram}{20}{subsection.50}
+\contentsline {section}{\numberline {1.5}From the kinetic theory to MHD}{20}{section.52}
+\contentsline {subsection}{\numberline {1.5.1}Boltzmann's Equation}{20}{subsection.53}
+\contentsline {subsection}{\numberline {1.5.2}Moment Equations}{21}{subsection.57}
+\contentsline {subsubsection}{\numberline {1.5.2.1}Zeroth Moment: The Continuity Equation}{21}{subsubsection.59}
+\contentsline {subsubsection}{\numberline {1.5.2.2}First Moment: The Momentum Equation}{21}{subsubsection.61}
+\contentsline {subsubsection}{\numberline {1.5.2.3}Second Moment: The Total Energy Equation}{22}{subsubsection.68}
+\contentsline {subsection}{\numberline {1.5.3}Maxwell's Equations}{22}{subsection.70}
+\contentsline {subsection}{\numberline {1.5.4}Quasi-Neutral Single Fluid Approximation}{23}{subsection.71}
+\contentsline {subsection}{\numberline {1.5.5}Ideal MHD Approximations}{23}{subsection.76}
+\contentsline {subsection}{\numberline {1.5.6}Rankine-Hugoniot Conditions}{24}{subsection.84}
+\contentsline {section}{\numberline {1.6}Numerical methods for solving equations}{25}{section.86}
+\contentsline {subsection}{\numberline {1.6.1}History and current state of star formation jet simulations}{27}{subsection.88}
+\contentsline {section}{\numberline {1.7}Structure of this thesis}{28}{section.89}
+\contentsline {chapter}{\numberline {2}Numerical Method}{29}{chapter.90}
+\contentsline {section}{\numberline {2.1}The Equations of Ideal Magnetohydrodynamics (MHD)}{29}{section.91}
+\contentsline {section}{\numberline {2.2}Numerical constraints}{30}{section.98}
+\contentsline {subsection}{\numberline {2.2.1}Shock-capturing Scheme}{31}{subsection.99}
+\contentsline {subsection}{\numberline {2.2.2}Shock-smearing -- Artificial Dissipative Terms}{31}{subsection.100}
+\contentsline {subsection}{\numberline {2.2.3}Linear hybrid schemes}{32}{subsection.101}
+\contentsline {subsection}{\numberline {2.2.4}Godunov's Method}{32}{subsection.102}
+\contentsline {subsubsection}{\numberline {2.2.4.1}The Riemann Problem}{33}{subsubsection.103}
+\contentsline {subsubsection}{\numberline {2.2.4.2}Exact Solution of the Riemann Problem}{34}{subsubsection.106}
+\contentsline {subsubsection}{\numberline {2.2.4.3}Linearised solution of the Riemann problem}{34}{subsubsection.107}
+\contentsline {subsection}{\numberline {2.2.5}Reconstruction-Evolution Method}{37}{subsection.117}
+\contentsline {subsection}{\numberline {2.2.6}Multidimensional correction: The Corner Transport Upwind method}{38}{subsection.123}
+\contentsline {subsubsection}{\numberline {2.2.6.1}Operator Split Method: Strang splitting}{38}{subsubsection.124}
+\contentsline {subsubsection}{\numberline {2.2.6.2}Second Order Runge-Kutta }{38}{subsubsection.125}
+\contentsline {subsubsection}{\numberline {2.2.6.3}The Corner Transport Upstream Method}{39}{subsubsection.127}
+\contentsline {subsection}{\numberline {2.2.7}Satisfying and maintaining $\boldsymbol {\nabla } \cdot \mathbf {B} = 0$}{40}{subsection.134}
+\contentsline {subsection}{\numberline {2.2.8}Modelling the Microphysics of Atomic Radiative Cooling}{41}{subsection.138}
+\contentsline {section}{\numberline {2.3}An MHD 3D numerical code: ATLAS}{43}{section.150}
+\contentsline {subsection}{\numberline {2.3.1}Parallelisation}{43}{subsection.151}
+\contentsline {subsection}{\numberline {2.3.2}Achieving Higher Resolution using Adaptive Mesh Refinement}{44}{subsection.152}
+\contentsline {section}{\numberline {2.4}Leda, a parallel cluster}{44}{section.155}
+\contentsline {chapter}{\numberline {3}Numerical Tests}{51}{chapter.157}
+\contentsline {section}{\numberline {3.1}Introduction}{51}{section.158}
+\contentsline {section}{\numberline {3.2}HD Tests}{52}{section.160}
+\contentsline {subsection}{\numberline {3.2.1}One-dimensional Shock Tube}{52}{subsection.161}
+\contentsline {subsection}{\numberline {3.2.2}Blast Wave}{53}{subsection.165}
+\contentsline {subsection}{\numberline {3.2.3}Double Mach Reflection (DMR) Test}{53}{subsection.167}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Initial Conditions}{53}{subsubsection.168}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Results}{56}{subsubsection.173}
+\contentsline {section}{\numberline {3.3}Cooling Tests}{56}{section.176}
+\contentsline {subsection}{\numberline {3.3.1}Overstable Radiative Shock}{56}{subsection.177}
+\contentsline {section}{\numberline {3.4}MHD Tests}{57}{section.180}
+\contentsline {subsection}{\numberline {3.4.1}MHD Shock Tube}{57}{subsection.181}
+\contentsline {subsection}{\numberline {3.4.2}Orszag-Tang Vortex}{59}{subsection.188}
+\contentsline {subsection}{\numberline {3.4.3}MHD Blast Wave}{61}{subsection.191}
+\contentsline {section}{\numberline {3.5}Simulation}{62}{section.194}
+\contentsline {section}{\numberline {3.6}Code comparison and scheme comparison}{62}{section.195}
+\contentsline {subsection}{\numberline {3.6.1}PLUTO description}{62}{subsection.196}
+\contentsline {subsection}{\numberline {3.6.2}Performance}{63}{subsection.197}
+\contentsline {subsection}{\numberline {3.6.3}Comparison I: Underdense Adiabatic Jet}{63}{subsection.199}
+\contentsline {subsection}{\numberline {3.6.4}Comparison II: Overdense Adiabatic Jet}{63}{subsection.200}
+\contentsline {section}{\numberline {3.7}Summary}{64}{section.202}
+\contentsline {chapter}{\numberline {4}Jets from Binary Protostars}{67}{chapter.203}
+\contentsline {section}{\numberline {4.1}Introduction}{68}{section.204}
+\contentsline {subsection}{\numberline {4.1.1}Jets and star formation}{68}{subsection.205}
+\contentsline {subsection}{\numberline {4.1.2}Binary Systems}{68}{subsection.206}
+\contentsline {subsection}{\numberline {4.1.3}Models for Binary jets}{68}{subsection.208}
+\contentsline {section}{\numberline {4.2}Observations of jets from the binary protostar IRS 5}{70}{section.210}
+\contentsline {subsection}{\numberline {4.2.1}Morphology}{72}{subsection.213}
+\contentsline {subsection}{\numberline {4.2.2}X-ray emission}{73}{subsection.214}
+\contentsline {subsection}{\numberline {4.2.3}Polarimetry}{73}{subsection.215}
+\contentsline {section}{\numberline {4.3}Method}{73}{section.218}
+\contentsline {subsection}{\numberline {4.3.1}Initial and boundary conditions}{74}{subsection.219}
+\contentsline {section}{\numberline {4.4}Results}{75}{section.221}
+\contentsline {subsection}{\numberline {4.4.1}Case I: HD}{75}{subsection.222}
+\contentsline {subsection}{\numberline {4.4.2}Case II: MHD}{76}{subsection.224}
+\contentsline {subsection}{\numberline {4.4.3}Case III: Orbiting binary jet}{78}{subsection.226}
+\contentsline {subsection}{\numberline {4.4.4}Emission maps}{79}{subsection.228}
+\contentsline {section}{\numberline {4.5}Discussion}{79}{section.231}
+\contentsline {subsection}{\numberline {4.5.1}The source of X-ray emission}{79}{subsection.232}
+\contentsline {subsection}{\numberline {4.5.2}Magnetic field effects}{81}{subsection.233}
+\contentsline {subsection}{\numberline {4.5.3}Source orbiting effects}{81}{subsection.234}
+\contentsline {subsection}{\numberline {4.5.4}Jet merging}{81}{subsection.235}
+\contentsline {section}{\numberline {4.6}Conclusions}{82}{section.236}
+\contentsline {chapter}{\numberline {5}Jet Recollimation and Acceleration in an Evacuated Cavity}{83}{chapter.237}
+\contentsline {section}{\numberline {5.1}Introduction}{84}{section.238}
+\contentsline {subsection}{\numberline {5.1.1}Motivation: Circulation Model}{84}{subsection.240}
+\contentsline {subsection}{\numberline {5.1.2}Motivation: Prehistory of Jets and Outflows from the Source}{85}{subsection.242}
+\contentsline {subsection}{\numberline {5.1.3}Recollimation}{85}{subsection.243}
+\contentsline {section}{\numberline {5.2}Method}{86}{section.244}
+\contentsline {subsection}{\numberline {5.2.1}Numerical method}{86}{subsection.245}
+\contentsline {subsection}{\numberline {5.2.2}System of equations}{86}{subsection.246}
+\contentsline {subsection}{\numberline {5.2.3}Initial and boundary conditions}{87}{subsection.251}
+\contentsline {subsubsection}{\numberline {5.2.3.1}Initial conditions}{87}{subsubsection.252}
+\contentsline {subsubsection}{\numberline {5.2.3.2}Boundary conditions}{88}{subsubsection.255}
+\contentsline {section}{\numberline {5.3}Results}{88}{section.256}
+\contentsline {subsection}{\numberline {5.3.1}Parameter space exploration}{88}{subsection.257}
+\contentsline {subsection}{\numberline {5.3.2}Case I: Pulsed, overdense adiabatic jets in cavities}{89}{subsection.259}
+\contentsline {subsection}{\numberline {5.3.3}Case II: Pulsed, underdense adiabatic jets in cavities}{89}{subsection.261}
+\contentsline {subsection}{\numberline {5.3.4}Case III: Steady, radiatively cooling jet in cavity}{89}{subsection.263}
+\contentsline {subsection}{\numberline {5.3.5}Case IV: Pulsed, non-adiabatic jet in cavity}{90}{subsection.265}
+\contentsline {subsection}{\numberline {5.3.6}Pulsed, non-adiabatic, three-dimensional jet in cavity}{90}{subsection.267}
+\contentsline {section}{\numberline {5.4}Discussion}{90}{section.270}
+\contentsline {subsection}{\numberline {5.4.1}The effects of collimation and acceleration}{90}{subsection.271}
+\contentsline {subsection}{\numberline {5.4.2}Observational signatures of the circulation model}{91}{subsection.272}
+\contentsline {subsection}{\numberline {5.4.3}Prehistory of jets}{91}{subsection.273}
+\contentsline {section}{\numberline {5.5}Conclusions}{91}{section.274}
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{99}{chapter.276}
+\contentsline {section}{\numberline {6.1}Code Testing and Code Comparison}{99}{section.277}
+\contentsline {section}{\numberline {6.2}Jets from Binary Protostars}{100}{section.278}
+\contentsline {section}{\numberline {6.3}Jets in Evacuated Ambient Media}{101}{section.279}
+\contentsline {section}{\numberline {6.4}Future Work}{102}{section.280}
+\contentsline {subsection}{\numberline {6.4.1}Jets from Binary Protostars}{102}{subsection.281}
+\contentsline {subsection}{\numberline {6.4.2}Jets in Evacuated Cavities}{103}{subsection.282}
+\contentsline {chapter}{Bibliography}{107}{section*.285}
+\contentsline {chapter}{\numberline {A}List of variables used in the text}{119}{appendix.286}
+\contentsline {chapter}{\numberline {B}Derivation of the energy equation from the second moment of the Boltzmann equation}{121}{appendix.288}

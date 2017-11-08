@@ -1,0 +1,19 @@
+%GNUPLOT: LaTeX picture with Postscript
+\begin{picture}(0,0)%
+\includegraphics[angle=90]{epslatex/rj1a}%
+\end{picture}%
+\begingroup
+\setlength{\unitlength}{0.0200bp}%
+\begin{picture}(22515,7200)(0,0)%
+\put(4885,6788){\makebox(0,0)[r]{\strut{}Mass}}%
+\put(11905,6788){\makebox(0,0)[r]{\strut{}Pressure}}%
+\put(19105,6788){\makebox(0,0)[r]{\strut{}Energy}}%
+\put(4885,4412){\makebox(0,0)[r]{\strut{}Vx}}%
+\put(11905,4412){\makebox(0,0)[r]{\strut{}Vy}}%
+\put(19105,4412){\makebox(0,0)[r]{\strut{}Vz}}%
+\put(4885,2144){\makebox(0,0)[r]{\strut{}By}}%
+\put(11905,2144){\makebox(0,0)[r]{\strut{}Bz}}%
+\put(19105,2144){\makebox(0,0)[r]{\strut{}Bz}}%
+\end{picture}%
+\endgroup
+\endinput

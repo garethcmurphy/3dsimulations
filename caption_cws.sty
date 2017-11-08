@@ -1,0 +1,122 @@
+\ProvidesPackage{cws_caption}
+
+%modified by Cian Shaffrey - this ONLY changes the caption envirnomenet to have 'FIG' in bold 
+%and the caption text in slant. With NO line under neath
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% By Alex Stark,  Signal Proc Lab, CUED.
+%%% Modifies appearance of figure captions
+%%% Modifies processing of references/bibliography.
+%%%
+%%% The package detects whether or not you want references in sections
+%%% or chapters.  If \bibname is defined when the package is loaded,
+%%% it chooses chapters.  You can override this behaviour with
+%%% \refsectionstrue and \refsectionsfalse.
+%%%
+%%% If you wish to use, say, chapterbib,sty, then you need to
+%%% \newcommand{\refname}{...} and \refsectionstrue
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here beginneth the new bits
+
+%\newlength{\captionruleth}
+%\setlength{\captionruleth}{0.25mm}
+%%\newcommand{\captionrule}{\hrule\@width\hsize\@height\captionruleth}
+%
+%\def\botfigrule{%
+%  \kern-8\p@
+%  \kern-\captionruleth
+%  %  \hrule width \columnwidth
+%  \captionrule
+%  \kern 8\p@}
+%
+%\def\fps@figure{tb}
+%\def\fps@table{tb}
+%
+%%\newcommand{\bibliographyhook}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here beginneth redefinitions of old bits
+
+
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+
+  \sbox\@tempboxa{{\bf #1:} {\sl #2\/}}%
+
+  \ifdim \wd\@tempboxa >\hsize
+
+    {\bf #1:} {\sl #2\/}\vspace{1ex}
+
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+
+  \fi
+\strut\vspace{-7ex}\par
+
+%\captionrule
+  \vskip\belowcaptionskip}
+
+
+
+
+
+
+
+%%%?%% The `thebibliography' environment inserts a section or
+%%%?%%   chapter command.  The references are typeset in \small.
+%
+%%    \begin{macrocode}
+%\renewenvironment{thebibliography}[1]
+%%%?%% The next line is additional: I wish they wouldn't do this!!!!!!!
+%{%
+%%%?%% %<*article>
+%\ifrefsections
+%%%?%% First { removed
+%      \section*{\refname
+%         \@mkboth{\uppercase{\refname}}{\uppercase{\refname}}}%
+%        %%%*%%% Addition (10/10/94) `Bibliography' in toc
+%\addcontentsline{toc}{section}{\protect\numberline{}\refname}
+%%%?%% %</article>
+%\else
+%%%?%% %<*!article>
+%%%?%% First { removed
+%%%%^%%% Tidied up bizzare command execution: doesn't work with LABCHAP
+%%%%^%%%      {\chapter*{\bibname
+%%%%^%%%         \@mkboth{\uppercase{\bibname}}{\uppercase{\bibname}}}%
+%      \chapter*{\bibname}
+%         \@mkboth{\uppercase{\bibname}}{\uppercase{\bibname}}%
+%%%%*%%% Addition (22/8/94) `Bibliography' in toc
+%\addcontentsline{toc}{chapter}{\protect\numberline{}\bibname}
+%%%?%% %</!article>
+%\fi
+%%%%*%%% Addition (22/8/94) Use small font---generalized 21/10/94
+%\small
+%\bibliographyhook%
+%      \list{\@biblabel{\arabic{enumiv}}}%
+%           {\settowidth\labelwidth{\@biblabel{#1}}%
+%            \leftmargin\labelwidth
+%            \advance\leftmargin\labelsep
+%            \if@openbib
+%              \advance\leftmargin\bibindent
+%              \itemindent -\bibindent
+%              \listparindent \itemindent
+%              \parsep \z@
+%            \fi
+%            \usecounter{enumiv}%
+%            \let\p@enumiv\@empty
+%            \renewcommand\theenumiv{\arabic{enumiv}}}%
+%      \if@openbib
+%        \renewcommand\newblock{\par}
+%      \else
+%        \renewcommand\newblock{\hskip .11em \@plus.33em \@minus.07em}%
+%      \fi
+%      \sloppy\clubpenalty4000\widowpenalty4000%
+%      \sfcode`\.=\@m}
+%     {\def\@noitemerr
+%       {\@latex@warning{Empty `thebibliography' environment}}%
+%      \endlist}
+%%    \end{macrocode}

@@ -1,0 +1,108 @@
+%GNUPLOT: LaTeX picture with Postscript
+\begin{picture}(0,0)%
+\includegraphics{epslatex/rj2b}%
+\end{picture}%
+\begingroup
+\setlength{\unitlength}{0.0200bp}%
+\begin{picture}(20699,12419)(0,0)%
+\put(1707,8697){\makebox(0,0)[r]{\strut{} 0}}%
+\put(1707,9214){\makebox(0,0)[r]{\strut{} 0.5}}%
+\put(1707,9730){\makebox(0,0)[r]{\strut{} 1}}%
+\put(1707,10247){\makebox(0,0)[r]{\strut{} 1.5}}%
+\put(1707,10763){\makebox(0,0)[r]{\strut{} 2}}%
+\put(1707,11280){\makebox(0,0)[r]{\strut{} 2.5}}%
+\put(1707,11796){\makebox(0,0)[r]{\strut{} 3}}%
+\put(4238,11246){\makebox(0,0)[r]{\strut{}$\rho$}}%
+\put(8081,8697){\makebox(0,0)[r]{\strut{} 1}}%
+\put(8081,9041){\makebox(0,0)[r]{\strut{} 2}}%
+\put(8081,9386){\makebox(0,0)[r]{\strut{} 3}}%
+\put(8081,9730){\makebox(0,0)[r]{\strut{} 4}}%
+\put(8081,10074){\makebox(0,0)[r]{\strut{} 5}}%
+\put(8081,10419){\makebox(0,0)[r]{\strut{} 6}}%
+\put(8081,10763){\makebox(0,0)[r]{\strut{} 7}}%
+\put(8081,11107){\makebox(0,0)[r]{\strut{} 8}}%
+\put(8081,11452){\makebox(0,0)[r]{\strut{} 9}}%
+\put(8081,11796){\makebox(0,0)[r]{\strut{} 10}}%
+\put(10862,11246){\makebox(0,0)[r]{\strut{}$p_g$}}%
+\put(14912,8697){\makebox(0,0)[r]{\strut{} 2}}%
+\put(14912,9041){\makebox(0,0)[r]{\strut{} 4}}%
+\put(14912,9386){\makebox(0,0)[r]{\strut{} 6}}%
+\put(14912,9730){\makebox(0,0)[r]{\strut{} 8}}%
+\put(14912,10074){\makebox(0,0)[r]{\strut{} 10}}%
+\put(14912,10419){\makebox(0,0)[r]{\strut{} 12}}%
+\put(14912,10763){\makebox(0,0)[r]{\strut{} 14}}%
+\put(14912,11107){\makebox(0,0)[r]{\strut{} 16}}%
+\put(14912,11452){\makebox(0,0)[r]{\strut{} 18}}%
+\put(14912,11796){\makebox(0,0)[r]{\strut{} 20}}%
+\put(17693,11246){\makebox(0,0)[r]{\strut{}E}}%
+\put(1707,4599){\makebox(0,0)[r]{\strut{}-2.5}}%
+\put(1707,5115){\makebox(0,0)[r]{\strut{}-2}}%
+\put(1707,5632){\makebox(0,0)[r]{\strut{}-1.5}}%
+\put(1707,6148){\makebox(0,0)[r]{\strut{}-1}}%
+\put(1707,6664){\makebox(0,0)[r]{\strut{}-0.5}}%
+\put(1707,7181){\makebox(0,0)[r]{\strut{} 0}}%
+\put(1707,7697){\makebox(0,0)[r]{\strut{} 0.5}}%
+\put(4238,7147){\makebox(0,0)[r]{\strut{}V$_x$}}%
+\put(8331,4599){\makebox(0,0)[r]{\strut{}-3}}%
+\put(8331,4881){\makebox(0,0)[r]{\strut{}-2.5}}%
+\put(8331,5162){\makebox(0,0)[r]{\strut{}-2}}%
+\put(8331,5444){\makebox(0,0)[r]{\strut{}-1.5}}%
+\put(8331,5726){\makebox(0,0)[r]{\strut{}-1}}%
+\put(8331,6007){\makebox(0,0)[r]{\strut{}-0.5}}%
+\put(8331,6289){\makebox(0,0)[r]{\strut{} 0}}%
+\put(8331,6570){\makebox(0,0)[r]{\strut{} 0.5}}%
+\put(8331,6852){\makebox(0,0)[r]{\strut{} 1}}%
+\put(8331,7134){\makebox(0,0)[r]{\strut{} 1.5}}%
+\put(8331,7415){\makebox(0,0)[r]{\strut{} 2}}%
+\put(8331,7697){\makebox(0,0)[r]{\strut{} 2.5}}%
+\put(10862,7147){\makebox(0,0)[r]{\strut{}V$_y$}}%
+\put(15162,4599){\makebox(0,0)[r]{\strut{}-1}}%
+\put(15162,4943){\makebox(0,0)[r]{\strut{}-0.5}}%
+\put(15162,5287){\makebox(0,0)[r]{\strut{} 0}}%
+\put(15162,5632){\makebox(0,0)[r]{\strut{} 0.5}}%
+\put(15162,5976){\makebox(0,0)[r]{\strut{} 1}}%
+\put(15162,6320){\makebox(0,0)[r]{\strut{} 1.5}}%
+\put(15162,6664){\makebox(0,0)[r]{\strut{} 2}}%
+\put(15162,7009){\makebox(0,0)[r]{\strut{} 2.5}}%
+\put(15162,7353){\makebox(0,0)[r]{\strut{} 3}}%
+\put(15162,7697){\makebox(0,0)[r]{\strut{} 3.5}}%
+\put(17693,7147){\makebox(0,0)[r]{\strut{}V$_z$}}%
+\put(1457,624){\makebox(0,0)[r]{\strut{} 0}}%
+\put(1457,906){\makebox(0,0)[r]{\strut{} 1}}%
+\put(1457,1187){\makebox(0,0)[r]{\strut{} 2}}%
+\put(1457,1469){\makebox(0,0)[r]{\strut{} 3}}%
+\put(1457,1751){\makebox(0,0)[r]{\strut{} 4}}%
+\put(1457,2033){\makebox(0,0)[r]{\strut{} 5}}%
+\put(1457,2314){\makebox(0,0)[r]{\strut{} 6}}%
+\put(1457,2596){\makebox(0,0)[r]{\strut{} 7}}%
+\put(1457,2878){\makebox(0,0)[r]{\strut{} 8}}%
+\put(1457,3160){\makebox(0,0)[r]{\strut{} 9}}%
+\put(1457,3441){\makebox(0,0)[r]{\strut{} 10}}%
+\put(1457,3723){\makebox(0,0)[r]{\strut{} 11}}%
+\put(4238,3173){\makebox(0,0)[r]{\strut{}B$_y$}}%
+\put(7831,624){\makebox(0,0)[r]{\strut{}-5}}%
+\put(7831,934){\makebox(0,0)[r]{\strut{}-4}}%
+\put(7831,1244){\makebox(0,0)[r]{\strut{}-3}}%
+\put(7831,1554){\makebox(0,0)[r]{\strut{}-2}}%
+\put(7831,1864){\makebox(0,0)[r]{\strut{}-1}}%
+\put(7831,2173){\makebox(0,0)[r]{\strut{} 0}}%
+\put(7831,2483){\makebox(0,0)[r]{\strut{} 1}}%
+\put(7831,2793){\makebox(0,0)[r]{\strut{} 2}}%
+\put(7831,3103){\makebox(0,0)[r]{\strut{} 3}}%
+\put(7831,3413){\makebox(0,0)[r]{\strut{} 4}}%
+\put(7831,3723){\makebox(0,0)[r]{\strut{} 5}}%
+\put(10862,3173){\makebox(0,0)[r]{\strut{}B$_z$}}%
+\put(14912,624){\makebox(0,0)[r]{\strut{} 2}}%
+\put(14912,968){\makebox(0,0)[r]{\strut{} 4}}%
+\put(14912,1313){\makebox(0,0)[r]{\strut{} 6}}%
+\put(14912,1657){\makebox(0,0)[r]{\strut{} 8}}%
+\put(14912,2001){\makebox(0,0)[r]{\strut{} 10}}%
+\put(14912,2346){\makebox(0,0)[r]{\strut{} 12}}%
+\put(14912,2690){\makebox(0,0)[r]{\strut{} 14}}%
+\put(14912,3034){\makebox(0,0)[r]{\strut{} 16}}%
+\put(14912,3379){\makebox(0,0)[r]{\strut{} 18}}%
+\put(14912,3723){\makebox(0,0)[r]{\strut{} 20}}%
+\put(17693,3173){\makebox(0,0)[r]{\strut{}$\phi$}}%
+\end{picture}%
+\endgroup
+\endinput

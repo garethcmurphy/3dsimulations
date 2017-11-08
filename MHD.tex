@@ -1,0 +1,250 @@
+\chapter{Derivation of the energy equation from the second moment of the Boltzmann equation}
+\label{MHDDerivation}
+This derivation uses parts of \citet{2006Kominsky}.
+The collisionless form of the Boltzmann equation is:
+\begin{equation}
+\frac{\partial{ n \langle \chi \rangle }}{\partial{t}}
++
+ {\boldsymbol{\nabla}}_x n{\langle \mathbf{v} \chi \rangle}
++
+n
+\langle
+\mathbf{a}
+{\boldsymbol{\nabla}}_v . { \chi }
+\rangle
+=0
+\end{equation}
+
+where $\chi$ represents a conserved quantity such as density, total energy or momentum.
+
+
+
+
+Taking the second moment,  $\chi  = \frac{1}{2} m v^2 =  \frac{1}{2} m  \mathbf{v \cdot v}$, gives
+\begin{equation}
+\frac{\partial}{\partial t}\left[
+\rho
+\left(
+\mathbf {u \cdot u }
++
+\langle
+\mathbf {w \cdot w }
+\rangle
+\right)
+\right]
++ {\boldsymbol{\nabla}}_x
+\cdot
+\left(
+\frac{1}{2}
+\rho
+\langle
+\left(
+\mathbf{v}
+\cdot
+\mathbf{v}
+\right)
+\mathbf{v}
+\rangle
+\right)
++ \rho \mathbf{a} . {\boldsymbol{\nabla}}_v \frac{1}{2} \mathbf{u}^2
+=0
+\label{SecondMoment}
+\end{equation}
+
+
+Taking the definition of $ P = \frac{1}{d }\langle \mathbf {w \cdot w } \rangle $ 
+where $d$ is the dimensionality of the system (often 3). Introducing the adiabatic index or ratio of specific heats;
+\begin{equation}
+\gamma = \frac{d+2}{d}
+\end{equation}
+for a monatomic gas.
+\begin{equation}
+P = \frac{1}{d} \rho \langle w^2 \rangle = \frac{\gamma -1}{\gamma} \rho \langle w^2 \rangle
+\end{equation}
+
+
+Define the energy density, 
+\begin{equation}
+E = \frac{1}{2} \rho u^2 + \frac{p}{\gamma -1}
+\end{equation}
+
+
+The first term in Equation \ref{SecondMoment} is then
+\begin{equation}
+\frac{\partial}{\partial t}\left[
+\rho
+\left(
+\mathbf {u \cdot u }
++
+\langle
+\mathbf {w \cdot w }
+\rangle
+\right)
+\right]
+= 
+\frac{\partial E }{\partial t}
+\end{equation}
+
+The second term:
+
+
+\begin{eqnarray*}
+\boldsymbol{\nabla} .\left( \frac{1}{2} \rho \langle \mathbf{\left( v \cdot v\right) v}\rangle \right) &=&     
+\boldsymbol{\nabla} .\left( \frac{1}{2} \rho \langle \mathbf{\left(  \left( \mathbf {u+w}\right)\cdot  \left( \mathbf {u+w}\right)\right) \left( \mathbf {u+w}\right) }\rangle \right)  
+\\
+ &=& 
+\boldsymbol{\nabla} .\left( \frac{1}{2} \rho \langle \mathbf{\left( \mathbf {u^\mathrm{2}+\mathrm{2}u \cdot w+w^\mathrm{2}}\right) \left( \mathbf {u+w}\right) }\rangle \right)  
+\\
+ &=& 
+\boldsymbol{\nabla} .\left( 
+\frac{1}{2} \rho   u^2 \mathbf{u} 
++\frac{1}{2} \rho \langle w^2 \rangle \mathbf{u} 
++ \rho u w^2 
++\frac{1}{2} \rho  w^3 
+\right)  
+\\
+ &=&
+\boldsymbol{\nabla} . \left(
+E \mathbf{u}
++
+P \mathbf{u}
++ \frac{1}{2} \rho  w^3
+\right)
+\\
+\end{eqnarray*}
+
+Excluding gravity, the acceleration due to electromagnetic forces is:
+\begin{equation}
+\mathbf{a}= \frac{q}{m} \left( \mathbf {E + u \times B}\right)
+\end{equation}
+
+The acceleration term is then:
+\begin{equation}
+{\boldsymbol{\nabla}}_v \chi 
+= 
+\frac{1}{2} m {\boldsymbol{\nabla}}_v \left( \mathbf{v \cdot v} \right) 
+=
+\mathbf{v} \cdot m {\boldsymbol{\nabla}}_v \left( \mathbf{ v} \right) 
+=
+m \mathbf{v}
+\end{equation}
+\begin{equation}
+- n \langle \mathbf{a} \cdot {\boldsymbol{\nabla}}_v  { \chi } \rangle 
+=
+- n \langle \frac{\mathbf{F}}{m} \cdot m \mathbf{v} \rangle 
+=
+- n \langle \mathbf{F} \cdot \mathbf{v} \rangle 
+\end{equation}
+
+Now,
+\begin{equation}
+ \langle \mathbf{F} \cdot \mathbf{v} \rangle 
+=
+ \langle \mathbf{F} \cdot \mathbf{u} \rangle
++
+ \langle \mathbf{F} \cdot \mathbf{w} \rangle
+=
+ \langle \mathbf{F} \rangle \mathbf{u} 
++
+ \langle \mathbf{F} \cdot \mathbf{w} \rangle
+\end{equation}
+
+For all velocity-independent forces $\mathbf{F}$
+\begin{equation}
+\langle \mathbf{F \cdot w} \rangle
+=
+\mathbf{F \cdot} \langle \mathbf{ w} \rangle
+=0
+\end{equation}
+
+For the Lorentz force, 
+\begin{eqnarray*}
+\langle \mathbf{F \cdot w} \rangle
+&=&
+\langle
+\left(
+q
+\left(
+\mathbf{E + v \times B}
+\right)
+\right)
+\cdot
+\mathbf{w}
+\rangle\\
+&=&
+q \langle \mathbf{\left( v \times B \right) \cdot  w} \rangle
++
+q \langle \mathbf{E \cdot w} \rangle
+\\
+&=&
+q \mathbf{u \times B} \langle w \rangle
++
+q \langle \left(  w \times B  \right)  \cdot w \rangle
+\\
+\end{eqnarray*}
+
+
+The moment equation is now:
+
+\begin{equation}
+\frac{\partial}{\partial t}E
++
+{\boldsymbol{\nabla}}_x
+\left(
+u \left( E +P \right)
+\right)
+-
+nq\mathbf{u \cdot E}
+=0
+\end{equation}
+
+Defining the current density:
+\begin{equation}
+\mathbf{J} = n q \mathbf{u}
+\end{equation}
+
+
+\begin{equation}
+\frac{\partial}{\partial t}E
++
+{\boldsymbol{\nabla}}_x
+\left(
+u \left( E +P \right)
+\right)
+-
+\mathbf{J \cdot E}
+=0
+\end{equation}
+
+Using vector identities, and assuming infinite conductivity,  $\frac{\mathbf J }{\sigma}= \mathbf {E + u \times B} =0$ the $ \mathbf{J \cdot E} $ term can be written as:
+
+\begin{eqnarray*}
+ \mathbf{J \cdot E}
+&=& 
+  \mathbf{ \left( \boldsymbol{\nabla} \times B \right) \cdot E}
+ \\
+&=& 
+  \mathbf{ \left( \boldsymbol{\nabla} \times E \right) \cdot B} -  \boldsymbol{\nabla} \cdot \left( \mathbf{E \times B} \right)
+ \\
+&=& 
+   \frac{\partial \mathbf{B} }{\partial t} \cdot \mathbf{B} -  \boldsymbol{\nabla} \cdot \left( \mathbf{ u \times B  \times B} \right)
+ \\
+&=& 
+  \frac{1}{2} \frac{\partial B^2 }{\partial t}  -  \boldsymbol{\nabla} \cdot \left( \mathbf{ \left( u \cdot B \right)  B } - B^2 \mathbf{u} \right)
+ \\
+\end{eqnarray*}
+
+ 
+Finally, the conservation of energy is:
+
+\begin{equation}
+\frac{\partial E}{\partial t}
++
+{\boldsymbol{\nabla}}_x
+\left(
+u \left( E +P + \frac{1}{2} B^2 \right)
+- \mathbf{ \left( u \cdot B \right)  B }
+\right)
+=0
+\end{equation}
+

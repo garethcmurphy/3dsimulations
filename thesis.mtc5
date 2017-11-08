@@ -1,0 +1,20 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}The Equations of Ideal Magnetohydrodynamics (MHD)}{\reset@font\mtcSfont 29}{section.91}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Numerical constraints}{\reset@font\mtcSfont 30}{section.98}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Shock-capturing Scheme}{\reset@font\mtcSSfont 31}{subsection.99}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Shock-smearing -- Artificial Dissipative Terms}{\reset@font\mtcSSfont 31}{subsection.100}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Linear hybrid schemes}{\reset@font\mtcSSfont 32}{subsection.101}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.4}Godunov's Method}{\reset@font\mtcSSfont 32}{subsection.102}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.4.1}The Riemann Problem}{\reset@font\mtcSSSfont 33}{subsubsection.103}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.4.2}Exact Solution of the Riemann Problem}{\reset@font\mtcSSSfont 34}{subsubsection.106}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.4.3}Linearised solution of the Riemann problem}{\reset@font\mtcSSSfont 34}{subsubsection.107}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.5}Reconstruction-Evolution Method}{\reset@font\mtcSSfont 37}{subsection.117}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.6}Multidimensional correction: The Corner Transport Upwind method}{\reset@font\mtcSSfont 38}{subsection.123}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.6.1}Operator Split Method: Strang splitting}{\reset@font\mtcSSSfont 38}{subsubsection.124}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.6.2}Second Order Runge-Kutta }{\reset@font\mtcSSSfont 38}{subsubsection.125}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.2.6.3}The Corner Transport Upstream Method}{\reset@font\mtcSSSfont 39}{subsubsection.127}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.7}Satisfying and maintaining $\boldsymbol {\nabla } \cdot \mathbf {B} = 0$}{\reset@font\mtcSSfont 40}{subsection.134}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.8}Modelling the Microphysics of Atomic Radiative Cooling}{\reset@font\mtcSSfont 41}{subsection.138}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}An MHD 3D numerical code: ATLAS}{\reset@font\mtcSfont 43}{section.150}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Parallelisation}{\reset@font\mtcSSfont 43}{subsection.151}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Achieving Higher Resolution using Adaptive Mesh Refinement}{\reset@font\mtcSSfont 44}{subsection.152}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Leda, a parallel cluster}{\reset@font\mtcSfont 44}{section.155}}

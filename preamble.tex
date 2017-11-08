@@ -1,0 +1,142 @@
+%\usepackage{sabon}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{quotchap}
+\usepackage{labfancy}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{tocbibind}
+\usepackage{pifont}
+\usepackage{acronym_cws}
+\usepackage{caption_cws}
+\usepackage{nicefrac}
+\usepackage{textcomp}
+\usepackage[mathscr]{euscript}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{subfigure}
+
+%\usepackage{hytex}
+
+%there are few more \usepackages at the end of this file
+
+%\newcommand{\pdf}[1]{#1}%\newcommand{\eps}[1]{}  %for pdflatex
+%\pdf{\usepackage[pdftex]{graphicx} \DeclareGraphicsExtensions{.jpg,.pdf} }
+
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+
+%%for onepage layout - this sets up the pages to be EXACTLY the same as each other
+\setlength{\oddsidemargin}{0.5cm} \setlength{\evensidemargin}{0.0cm}
+
+%for twopage layout
+%\setlength{\oddsidemargin}{0.65cm} \setlength{\evensidemargin}{-.65cm} 
+\setlength{\textwidth}{16 cm} \setlength{\textheight}{22.5cm} \setlength{\topmargin}{0.15\baselineskip}
+\setlength{\parskip}{0pt} \setlength{\parsep}{5pt} \addtolength{\headheight}{1.6pt}
+%\renewcommand{\baselinestretch}{1.21}
+\newcommand{\GlobalLineSpacingNormalsize}{\renewcommand{\baselinestretch}{1.21} \small\normalsize} % 11pt + 1.21 ==> 1.5 line spacing
+\newcommand{\LineSpacingOneNormalsize}{\renewcommand{\baselinestretch}{1} \small\normalsize}
+\GlobalLineSpacingNormalsize %set the line spacing
+
+%set up headers
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\hspace{3em}  #1 \hfill}{}}
+\renewcommand{\sectionmark}[1]{\markright{\hfill  \thesection \ #1 \hspace{3em}}}
+ \fancyhead[LE,RO]{\bfseries \thepage}
+ \fancyhead[LO]{\bfseries \rightmark}
+ \fancyhead[RE]{\bfseries \leftmark}
+ \fancyfoot{}
+
+\newcommand{\remind}[1]{{\color{red}\textit{\textbf{\ensuremath{\ast\ast} #1
+\ensuremath{\ast\ast} }}}}
+
+%commands for text purposes
+\newcommand{\noi}{\noindent}
+\newcommand{\non}{\nonumber}
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\etc}{\textit{etc.}}
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\apriori}{\textit{a-priori}}
+%\newcommand{\probdistfunc}{\textit{pdf}}
+
+\newcommand{\order}[1]{\ensuremath{\mathscr{O}(#1)}} %when talking about order of computation efficiency
+
+\newcommand{\first}{\ensuremath{1^{st}}}
+\newcommand{\second}{\ensuremath{2^{nd}}}
+\newcommand{\third}{\ensuremath{3^{rd}}}
+\newcommand{\forth}{\ensuremath{4^{th}}}
+
+\newcommand{\figa}{\textbf{(a)}}  %for referencing sub figures
+\newcommand{\figb}{\textbf{(b)}}
+\newcommand{\figc}{\textbf{(c)}}
+\newcommand{\figd}{\textbf{(d)}}
+\newcommand{\fige}{\textbf{(e)}}
+\newcommand{\figf}{\textbf{(f)}}
+\newcommand{\figh}{\textbf{(h)}}
+
+\newcommand{\textcircle}[1]{\ensuremath{\mathbin{\settowidth{\dimen1}{\mbox{$\bigcirc$}}%
+              \makebox[0pt][l]{$\bigcirc$}\makebox[\dimen1]{#1}}}}
+
+%commands for Colour definition
+\definecolor{blue}{rgb}{0,0.13725,0.91765} % Make 'blue' a bit darker than {0,0,1}
+\definecolor{green}{rgb}{0.1,0.6,0.1} % Make 'green' a bit darker than {0,0,1}
+\definecolor{red}{rgb}{0.86667,0,0.066667}
+\definecolor{yellow}{rgb}{1,0.87109,0.19922}
+\definecolor{orange}{rgb}{1,0.5,0.1}
+\definecolor{magenta}{rgb}{.8,0,0.8}
+
+% math functions
+\def\log{\mathop{\mbox{log}}\nolimits}
+\def\lg{\mathop{\mbox{lg}}\nolimits}
+\def\ln{\mathop{\mbox{ln}}\nolimits}
+\def\lim{\mathop{\mbox{lim}}}
+\def\limsup{\mathop{\mbox{lim\,sup}}}
+\def\liminf{\mathop{\mbox{lim\,inf}}}
+\def\sin{\mathop{\mbox{sin}}\nolimits}
+\def\arcsin{\mathop{\mbox{arcsin}}\nolimits}
+\def\sinh{\mathop{\mbox{sinh}}\nolimits}
+\def\cos{\mathop{\mbox{cos}}\nolimits}
+\def\arccos{\mathop{\mbox{arccos}}\nolimits}
+\def\cosh{\mathop{\mbox{cosh}}\nolimits}
+\def\tan{\mathop{\mbox{tan}}\nolimits}
+\def\arctan{\mathop{\mbox{arctan}}\nolimits}
+\def\tanh{\mathop{\mbox{tanh}}\nolimits}
+\def\cot{\mathop{\mbox{cot}}\nolimits}
+\def\coth{\mathop{\mbox{coth}}\nolimits}
+\def\sec{\mathop{\mbox{sec}}\nolimits}
+\def\csc{\mathop{\mbox{csc}}\nolimits}
+\def\max{\mathop{\mbox{max}}}
+\def\min{\mathop{\mbox{min}}}
+\def\sup{\mathop{\mbox{sup}}}
+\def\inf{\mathop{\mbox{inf}}}
+\def\arg{\mathop{\mbox{arg}}\nolimits}
+\def\ker{\mathop{\mbox{ker}}\nolimits}
+\def\dim{\mathop{\mbox{dim}}\nolimits}
+\def\hom{\mathop{\mbox{hom}}\nolimits}
+\def\det{\mathop{\mbox{det}}}
+\def\exp{\mathop{\mbox{exp}}\nolimits}
+\def\Pr{\mathop{\mbox{Pr}}}
+\def\gcd{\mathop{\mbox{gcd}}}
+\def\deg{\mathop{\mbox{deg}}\nolimits}
+\def\argmin{\mathop{\mbox{arg\, min}}}
+\def\argmax{\mathop{\mbox{arg\,max}}}
+\def\mod{\mathop{\mbox{mod}}\nolimits}
+\def\sign{\mathop{\mbox{sign}}}
+
+%new command for an English date structure
+\newcommand*{\dateenglish}{\renewcommand*{\today}{%
+ \number\day \ifcase\day \or
+ $^{st}$\or $^{nd}$\or $^{rd}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or
+ $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or
+ $^{st}$\or $^{nd}$\or $^{rd}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or $^{th}$\or
+ $^{stt}$\fi\space \ifcase\month \or
+ January\or February \or March\or April\or May\or June\or
+ July\or August\or September\or October\or  November\or
+ December\fi \space\number\year}}
+
+\usepackage{titlepages}
+%for setting the depth of the TOC and the subsections and paragraphs
+\setcounter{tocdepth}{2} \setcounter{secnumdepth}{3}
+\endinput
